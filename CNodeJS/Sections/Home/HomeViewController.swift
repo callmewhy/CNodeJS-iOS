@@ -15,10 +15,13 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     var myDataSource: ArrayDataSource?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        TopicStore.sharedInstance.loadData(.AllType, mode: .Refresh, finishedClosure:{
+            self.setupTableView(.AllType)
+        })
+        
         // Setup UI
         setupSementedControl()
         setupTableView(.AllType)
@@ -49,24 +52,22 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         segmentedControl.backgroundColor            = SEGMENT_BACKGROUND_COLOR
         
         // Closure
-        segmentedControl.indexChangeBlock = { [unowned self] sIndex in
+        segmentedControl.indexChangeBlock = {sIndex in
             self.setupTableView(TopicType.init(rawValue: sIndex)!)
         }
     }
 
     func setupTableView(type:TopicType) {
-
-        // Load data
-        TopicStore.sharedInstance.loadData(type)
-        
-        // Setup UITableView
         var cellConfigureClosure: CellConfigureClosure = { cell,item in
-            let myCell = cell as UITableViewCell
+            let myCell = cell as TopicTableViewCell
             let myItem = item as TopicModel
-            myCell.textLabel?.text = "ss"
+            myCell.titleLabel.text = myItem.title
+            myCell.lastTimeLabel.text = myItem.lastTime
+            myCell.authorLabel.text = myItem.author?.loginnName
         }
-        myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance[type], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
+        myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance.topicArray[type.rawValue], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
+        myTableView.reloadData()
     }
     
     /*

@@ -43,12 +43,59 @@
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" id="Py9-Lc-PNz">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" id="Py9-Lc-PNz" customClass="TopicTableViewCell" customModule="CNodeJS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Py9-Lc-PNz" id="Rjr-0o-XaU">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-Fp-T2J">
+                                                    <rect key="frame" x="20" y="0.0" width="560" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="8VL-cV-hi7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d0-m1-xrV">
+                                                    <rect key="frame" x="20" y="26" width="43" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRO-0P-LHS">
+                                                    <rect key="frame" x="548" y="26" width="31.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QHy-Fp-T2J" firstAttribute="leading" secondItem="5d0-m1-xrV" secondAttribute="leading" id="29P-Af-fgT"/>
+                                                <constraint firstItem="QHy-Fp-T2J" firstAttribute="top" secondItem="Rjr-0o-XaU" secondAttribute="top" id="384-Fd-I1Y"/>
+                                                <constraint firstItem="QHy-Fp-T2J" firstAttribute="leading" secondItem="5d0-m1-xrV" secondAttribute="trailing" constant="-560" id="9gg-cw-WkZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="5d0-m1-xrV" secondAttribute="bottom" id="ISl-zy-IT6"/>
+                                                <constraint firstAttribute="bottom" secondItem="QHy-Fp-T2J" secondAttribute="bottom" constant="20" id="PvG-5i-I3H"/>
+                                                <constraint firstItem="QHy-Fp-T2J" firstAttribute="leading" secondItem="Rjr-0o-XaU" secondAttribute="leading" constant="20" id="Vpf-3I-ieW"/>
+                                                <constraint firstItem="wRO-0P-LHS" firstAttribute="top" secondItem="QHy-Fp-T2J" secondAttribute="bottom" id="Yd2-pD-PQh"/>
+                                                <constraint firstItem="5d0-m1-xrV" firstAttribute="top" secondItem="QHy-Fp-T2J" secondAttribute="bottom" id="bAr-aw-Zit"/>
+                                                <constraint firstAttribute="bottom" secondItem="wRO-0P-LHS" secondAttribute="bottom" id="cA9-xd-0Hx"/>
+                                                <constraint firstItem="QHy-Fp-T2J" firstAttribute="trailing" secondItem="wRO-0P-LHS" secondAttribute="trailing" id="uqo-2p-WTG"/>
+                                                <constraint firstAttribute="trailing" secondItem="QHy-Fp-T2J" secondAttribute="trailing" constant="20" id="wEl-3z-jl2"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9gg-cw-WkZ"/>
+                                                    <exclude reference="PvG-5i-I3H"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="wRO-0P-LHS" id="XbG-EC-bOQ"/>
+                                            <outlet property="lastTimeLabel" destination="5d0-m1-xrV" id="flT-b9-smc"/>
+                                            <outlet property="titleLabel" destination="QHy-Fp-T2J" id="hcx-OI-A7E"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

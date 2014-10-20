@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 why. All rights reserved.
 //
 
+import Alamofire
 
 private let _sharedTopicStore = TopicStore()
 
@@ -16,22 +17,47 @@ enum TopicType:Int {
     case JobType    = 3
 }
 
+enum LoadMode:Int {
+    case Refresh    = 0
+    case LoadMore  = 1
+}
+
 class TopicStore: NSObject {
     
+    // topic data array
     var topicArray: [[TopicModel]] = [[TopicModel]](count: 4, repeatedValue: [TopicModel]())
+    
+    // current page number
+    var nowPages = [1,1,1,1]
+    
+    // topics' values in parameter of api
+    var topicValues = ["all","share","ask","job"]
+
     
     class var sharedInstance : TopicStore {
         return _sharedTopicStore
     }
-    
-    subscript(i: TopicType) -> [TopicModel] {
-        get {
-            return topicArray[i.rawValue]
+
+    func loadData(type:TopicType, mode:LoadMode, finishedClosure:()->Void) {
+        if(mode == .Refresh) {
+            nowPages[type.rawValue] = 0
+        }else if(mode == .LoadMore) {
+            nowPages[type.rawValue] += 1
         }
-    }
-    
-    func loadData(type:TopicType) {
-        topicArray[type.rawValue].append(TopicModel())
+        
+        let url = "https://cnodejs.org/api/v1/topics?page=\(nowPages[type.rawValue])&tab=\(topicValues[type.rawValue])"
+        
+        Alamofire.request(.GET, url)
+            .responseJSON {(_, _, JSON, _) in
+                var topics = JSON as NSArray
+                for item in topics {
+                    var topicDic = item as NSDictionary
+                    TopicStore.sharedInstance.topicArray[type.rawValue].append(ConvertTool.dictionaryToTopic(topicDic))
+                }
+                
+                finishedClosure()
+        }
+        
     }
     
 }
