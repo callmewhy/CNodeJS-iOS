@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         segmentedControl.backgroundColor            = SEGMENT_BACKGROUND_COLOR
         
         // Closure
-        segmentedControl.indexChangeBlock = {sIndex in
+        segmentedControl.indexChangeBlock = { sIndex in
             self.setupTableView(TopicType.init(rawValue: sIndex)!)
         }
     }

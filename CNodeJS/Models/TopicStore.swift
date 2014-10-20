@@ -51,8 +51,10 @@ class TopicStore: NSObject {
             .responseJSON {(_, _, JSON, _) in
                 var topics = JSON as NSArray
                 for item in topics {
+                    var topic = TopicModel()
                     var topicDic = item as NSDictionary
-                    TopicStore.sharedInstance.topicArray[type.rawValue].append(ConvertTool.dictionaryToTopic(topicDic))
+                    var newTopic = ConvertTool.addDicToTopic(topicDic, oldTopic: topic)
+                    TopicStore.sharedInstance.topicArray[type.rawValue].append(newTopic)
                 }
                 
                 finishedClosure()
