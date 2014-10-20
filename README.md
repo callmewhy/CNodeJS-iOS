@@ -5,7 +5,15 @@ CNodeJS
 An iOS app for [cnodejs.org](https://cnodejs.org/) .
 
 
-File directory: 
+
+## Requirements
+
+- iOS 8.0+
+- Xcode 6.1
+
+
+
+## File Directory
 
 - Sections: including all sections of the app.
 - General: reusable modules, e.g. Views and Categories
