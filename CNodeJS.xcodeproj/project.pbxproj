@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96A31A3719F4D4B1004E6941 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3619F4D4B1004E6941 /* HomeViewController.swift */; };
+		96A31A3919F4DA5D004E6941 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3819F4DA5D004E6941 /* Color.swift */; };
+		96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3B19F4E323004E6941 /* ArrayDataSource.swift */; };
+		96A31A3E19F4F369004E6941 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3D19F4F369004E6941 /* TopicModel.swift */; };
+		96A31A4019F4FAB3004E6941 /* TopicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3F19F4FAB3004E6941 /* TopicStore.swift */; };
 		96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCD919F4B515000EB59E /* AppDelegate.swift */; };
 		96C8CCDF19F4B515000EB59E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCDD19F4B515000EB59E /* Main.storyboard */; };
 		96C8CCE119F4B515000EB59E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCE019F4B515000EB59E /* Images.xcassets */; };
 		96C8CCE419F4B515000EB59E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCE219F4B515000EB59E /* LaunchScreen.xib */; };
 		96C8CCF019F4B515000EB59E /* CNodeJSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCEF19F4B515000EB59E /* CNodeJSTests.swift */; };
+		96C8CD0319F4BB92000EB59E /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CD0219F4BB92000EB59E /* HMSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,15 +31,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96A31A3619F4D4B1004E6941 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		96A31A3819F4DA5D004E6941 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		96A31A3B19F4E323004E6941 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		96A31A3D19F4F369004E6941 /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
+		96A31A3F19F4FAB3004E6941 /* TopicStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicStore.swift; sourceTree = "<group>"; };
 		96C8CCD419F4B515000EB59E /* CNodeJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNodeJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C8CCD819F4B515000EB59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C8CCD919F4B515000EB59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C8CCDE19F4B515000EB59E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96C8CCE019F4B515000EB59E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		96C8CCE019F4B515000EB59E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		96C8CCE319F4B515000EB59E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		96C8CCE919F4B515000EB59E /* CNodeJSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNodeJSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C8CCEE19F4B515000EB59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C8CCEF19F4B515000EB59E /* CNodeJSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNodeJSTests.swift; sourceTree = "<group>"; };
+		96C8CD0119F4BB92000EB59E /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		96C8CD0219F4BB92000EB59E /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		96C8CD0619F4BCF2000EB59E /* CNodeJS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CNodeJS-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96A31A3519F4D49A004E6941 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				96A31A3619F4D4B1004E6941 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		96A31A3A19F4E304004E6941 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				96A31A3B19F4E323004E6941 /* ArrayDataSource.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		96C8CCCB19F4B515000EB59E = {
 			isa = PBXGroup;
 			children = (
@@ -77,13 +107,13 @@
 			children = (
 				96C8CCD919F4B515000EB59E /* AppDelegate.swift */,
 				96C8CCDD19F4B515000EB59E /* Main.storyboard */,
+				96C8CCFC19F4B5B0000EB59E /* Sections */,
 				96C8CCF919F4B5B0000EB59E /* General */,
 				96C8CCFB19F4B5B0000EB59E /* Models */,
-				96C8CCFC19F4B5B0000EB59E /* Sections */,
 				96C8CCFD19F4B5B0000EB59E /* Tools */,
+				96C8CD0519F4BCB7000EB59E /* Macro */,
 				96C8CCFE19F4B5B0000EB59E /* Vendors */,
-				96C8CCE019F4B515000EB59E /* Images.xcassets */,
-				96C8CCE219F4B515000EB59E /* LaunchScreen.xib */,
+				96C8CCFF19F4B68A000EB59E /* Resources */,
 				96C8CCD719F4B515000EB59E /* Supporting Files */,
 			);
 			path = CNodeJS;
@@ -117,6 +147,7 @@
 		96C8CCF919F4B5B0000EB59E /* General */ = {
 			isa = PBXGroup;
 			children = (
+				96A31A3A19F4E304004E6941 /* Class */,
 				96C8CCFA19F4B5B0000EB59E /* View */,
 			);
 			path = General;
@@ -132,6 +163,8 @@
 		96C8CCFB19F4B5B0000EB59E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96A31A3D19F4F369004E6941 /* TopicModel.swift */,
+				96A31A3F19F4FAB3004E6941 /* TopicStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +172,9 @@
 		96C8CCFC19F4B5B0000EB59E /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				96A31A3519F4D49A004E6941 /* Home */,
+				96C8CD0719F4BD53000EB59E /* Detail */,
+				96C8CD0919F4BD53000EB59E /* Mine */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -153,8 +189,50 @@
 		96C8CCFE19F4B5B0000EB59E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				96C8CD0019F4BB92000EB59E /* HMSegmentedControl */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		96C8CCFF19F4B68A000EB59E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96C8CCE019F4B515000EB59E /* Images.xcassets */,
+				96C8CCE219F4B515000EB59E /* LaunchScreen.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		96C8CD0019F4BB92000EB59E /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				96C8CD0119F4BB92000EB59E /* HMSegmentedControl.h */,
+				96C8CD0219F4BB92000EB59E /* HMSegmentedControl.m */,
+			);
+			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
+		96C8CD0519F4BCB7000EB59E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				96C8CD0619F4BCF2000EB59E /* CNodeJS-Bridging-Header.h */,
+				96A31A3819F4DA5D004E6941 /* Color.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		96C8CD0719F4BD53000EB59E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		96C8CD0919F4BD53000EB59E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */,
 				96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */,
+				96A31A3919F4DA5D004E6941 /* Color.swift in Sources */,
+				96C8CD0319F4BB92000EB59E /* HMSegmentedControl.m in Sources */,
+				96A31A3719F4D4B1004E6941 /* HomeViewController.swift in Sources */,
+				96A31A3E19F4F369004E6941 /* TopicModel.swift in Sources */,
+				96A31A4019F4FAB3004E6941 /* TopicStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +378,7 @@
 				96C8CCE319F4B515000EB59E /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -337,6 +422,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "CNodeJS/Macro/CNodeJS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,6 +459,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "CNodeJS/Macro/CNodeJS-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -451,6 +538,7 @@
 				96C8CCF519F4B515000EB59E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96C8CCF619F4B515000EB59E /* Build configuration list for PBXNativeTarget "CNodeJSTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +547,7 @@
 				96C8CCF819F4B515000EB59E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,25 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xrQ-zN-orW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="tSG-Dc-A3x">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="xrQ-zN-orW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kiT-nm-r5b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dWb-Ay-TTr" kind="relationship" relationship="rootViewController" id="DFC-Sw-9GN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxl-od-Q7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="396"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="Yua-jM-ne1">
+            <objects>
+                <viewController id="dWb-Ay-TTr" customClass="HomeViewController" customModule="CNodeJS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="RJn-tm-vbQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vAc-NH-PN7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="zhr-FI-AHv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enS-ls-ldr" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XNW-xr-Bbt"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Sv-Ax-3pW">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" id="Py9-Lc-PNz">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Py9-Lc-PNz" id="Rjr-0o-XaU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="dWb-Ay-TTr" id="Fex-IR-xXo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Sv-Ax-3pW" firstAttribute="leading" secondItem="zhr-FI-AHv" secondAttribute="leading" id="7az-ma-oYV"/>
+                            <constraint firstItem="vAc-NH-PN7" firstAttribute="top" secondItem="5Sv-Ax-3pW" secondAttribute="bottom" id="Jgv-C4-ByO"/>
+                            <constraint firstItem="enS-ls-ldr" firstAttribute="top" secondItem="RJn-tm-vbQ" secondAttribute="bottom" id="Txa-UZ-h6B"/>
+                            <constraint firstItem="enS-ls-ldr" firstAttribute="leading" secondItem="zhr-FI-AHv" secondAttribute="leading" id="n52-7x-kzs"/>
+                            <constraint firstAttribute="trailing" secondItem="5Sv-Ax-3pW" secondAttribute="trailing" id="xMl-l2-Xgj"/>
+                            <constraint firstItem="5Sv-Ax-3pW" firstAttribute="top" secondItem="enS-ls-ldr" secondAttribute="bottom" id="xf7-tt-bie"/>
+                            <constraint firstAttribute="trailing" secondItem="enS-ls-ldr" secondAttribute="trailing" id="yXt-dw-ej6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="首页" id="Tz0-T1-e6B"/>
+                    <connections>
+                        <outlet property="myTableView" destination="5Sv-Ax-3pW" id="eCs-Gc-dbo"/>
+                        <outlet property="segmentedControl" destination="enS-ls-ldr" id="bhv-mk-ssb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypf-bV-qwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="792" y="396"/>
         </scene>
     </scenes>
 </document>
