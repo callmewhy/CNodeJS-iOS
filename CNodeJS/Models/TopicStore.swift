@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import PKHUD
+
 
 private let _sharedTopicStore = TopicStore()
 
@@ -25,7 +27,7 @@ enum LoadMode:Int {
 class TopicStore: NSObject {
     
     // topic data array
-    var topicArray: [[TopicModel]] = [[TopicModel]](count: 4, repeatedValue: [TopicModel]())
+    var topicArray = [[TopicModel](),[TopicModel](),[TopicModel](),[TopicModel]()]
     
     // current page number
     var nowPages = [1,1,1,1]
@@ -33,12 +35,16 @@ class TopicStore: NSObject {
     // topics' values in parameter of api
     var topicValues = ["all","share","ask","job"]
 
-    
+    // singleton
     class var sharedInstance : TopicStore {
         return _sharedTopicStore
     }
 
-    func loadData(type:TopicType, mode:LoadMode, finishedClosure:()->Void) {
+    func loadData(type:TopicType, mode:LoadMode = .Refresh, finishedClosure:()->Void) {
+        
+        HUDController.sharedController.contentView = HUDContentView.ProgressView()
+        HUDController.sharedController.show()
+        
         if(mode == .Refresh) {
             nowPages[type.rawValue] = 0
         }else if(mode == .LoadMore) {
@@ -49,14 +55,14 @@ class TopicStore: NSObject {
         
         Alamofire.request(.GET, url)
             .responseJSON {(_, _, JSON, _) in
-                var topics = JSON as NSArray
+                var topics = JSON as [AnyObject]
                 for item in topics {
                     var topic = TopicModel()
-                    var topicDic = item as NSDictionary
+                    var topicDic = item as [String:AnyObject]
                     var newTopic = ConvertTool.addDicToTopic(topicDic, oldTopic: topic)
                     TopicStore.sharedInstance.topicArray[type.rawValue].append(newTopic)
                 }
-                
+                HUDController.sharedController.hide(animated: false)
                 finishedClosure()
         }
         

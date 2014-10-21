@@ -5,6 +5,12 @@ CNodeJS
 An iOS app for [cnodejs.org](https://cnodejs.org/) .
 
 
+## Installation
+
+- git submodule init
+- git submodule update
+
+
 
 ## Requirements
 

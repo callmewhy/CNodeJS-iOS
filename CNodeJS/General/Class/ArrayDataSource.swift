@@ -27,6 +27,20 @@ class ArrayDataSource: NSObject, UITableViewDataSource {
         return items[index.row]
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
+        if (items.count == 0) {
+            var msgLabel = UILabel(frame: tableView.frame)
+            msgLabel.text = "暂无内容"
+            msgLabel.numberOfLines = 0
+            msgLabel.textAlignment = .Center
+            tableView.backgroundView = msgLabel
+            tableView.separatorStyle = .None
+            return 0;
+        }
+        
+        return 1;
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
