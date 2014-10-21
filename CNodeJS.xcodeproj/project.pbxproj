@@ -18,13 +18,13 @@
 		96A86A7719F64DDA003B43C9 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96A86A7B19F6507C003B43C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A86A7A19F6507C003B43C9 /* DetailViewController.swift */; };
 		96A86A8019F65FDB003B43C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A86A7F19F65FDB003B43C9 /* API.swift */; };
+		96A86AA219F67932003B43C9 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A86A9D19F6791E003B43C9 /* libMMMarkdown-iOS.a */; };
 		96BCCF9819F55A27003A7AB5 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */; };
 		96BCCF9B19F55C88003A7AB5 /* ConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */; };
 		96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCD919F4B515000EB59E /* AppDelegate.swift */; };
 		96C8CCDF19F4B515000EB59E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCDD19F4B515000EB59E /* Main.storyboard */; };
 		96C8CCE119F4B515000EB59E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCE019F4B515000EB59E /* Images.xcassets */; };
 		96C8CCE419F4B515000EB59E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCE219F4B515000EB59E /* LaunchScreen.xib */; };
-		96C8CCF019F4B515000EB59E /* CNodeJSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCEF19F4B515000EB59E /* CNodeJSTests.swift */; };
 		96C8CD0319F4BB92000EB59E /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CD0219F4BB92000EB59E /* HMSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
@@ -71,12 +71,33 @@
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = AlamofireTests;
 		};
-		96C8CCEA19F4B515000EB59E /* PBXContainerItemProxy */ = {
+		96A86A9A19F6791E003B43C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 96C8CCCC19F4B515000EB59E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 96C8CCD319F4B515000EB59E;
-			remoteInfo = CNodeJS;
+			containerPortal = 96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813DD614F893EB00EC9469;
+			remoteInfo = "MMMarkdown-Mac";
+		};
+		96A86A9C19F6791E003B43C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813E0E14F8961D00EC9469;
+			remoteInfo = "MMMarkdown-iOS";
+		};
+		96A86A9E19F6791E003B43C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813DEA14F893EB00EC9469;
+			remoteInfo = MMMarkdownTests;
+		};
+		96A86AA019F6791E003B43C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE813E1314F92B6100EC9469;
+			remoteInfo = mmmarkdown;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,6 +125,7 @@
 		96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PKHUD.xcodeproj; path = PKHUD/PKHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
 		96A86A7A19F6507C003B43C9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		96A86A7F19F65FDB003B43C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMMarkdown.xcodeproj; path = MMMarkdown/MMMarkdown.xcodeproj; sourceTree = SOURCE_ROOT; };
 		96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertTool.swift; sourceTree = "<group>"; };
 		96C8CCD419F4B515000EB59E /* CNodeJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNodeJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +134,6 @@
 		96C8CCDE19F4B515000EB59E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96C8CCE019F4B515000EB59E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		96C8CCE319F4B515000EB59E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		96C8CCE919F4B515000EB59E /* CNodeJSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNodeJSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C8CCEE19F4B515000EB59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C8CCEF19F4B515000EB59E /* CNodeJSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNodeJSTests.swift; sourceTree = "<group>"; };
 		96C8CD0119F4BB92000EB59E /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
@@ -125,15 +146,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A86AA219F67932003B43C9 /* libMMMarkdown-iOS.a in Frameworks */,
 				96A86A7519F64DCB003B43C9 /* PKHUD.framework in Frameworks */,
 				9626533519F6323F0076C205 /* Alamofire.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96C8CCE619F4B515000EB59E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +189,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		96A86A9419F6791E003B43C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96A86A9B19F6791E003B43C9 /* libMMMarkdown-Mac.a */,
+				96A86A9D19F6791E003B43C9 /* libMMMarkdown-iOS.a */,
+				96A86A9F19F6791E003B43C9 /* MMMarkdownTests.xctest */,
+				96A86AA119F6791E003B43C9 /* mmmarkdown */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		96C8CCCB19F4B515000EB59E = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				96C8CCD419F4B515000EB59E /* CNodeJS.app */,
-				96C8CCE919F4B515000EB59E /* CNodeJSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +306,7 @@
 		96C8CCFE19F4B5B0000EB59E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */,
 				96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */,
 				9626532C19F632340076C205 /* Alamofire.xcodeproj */,
 				96C8CD0019F4BB92000EB59E /* HMSegmentedControl */,
@@ -354,24 +380,6 @@
 			productReference = 96C8CCD419F4B515000EB59E /* CNodeJS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96C8CCE819F4B515000EB59E /* CNodeJSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 96C8CCF619F4B515000EB59E /* Build configuration list for PBXNativeTarget "CNodeJSTests" */;
-			buildPhases = (
-				96C8CCE519F4B515000EB59E /* Sources */,
-				96C8CCE619F4B515000EB59E /* Frameworks */,
-				96C8CCE719F4B515000EB59E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				96C8CCEB19F4B515000EB59E /* PBXTargetDependency */,
-			);
-			name = CNodeJSTests;
-			productName = CNodeJSTests;
-			productReference = 96C8CCE919F4B515000EB59E /* CNodeJSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -384,10 +392,6 @@
 					96C8CCD319F4B515000EB59E = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = YKZVGCKFL7;
-					};
-					96C8CCE819F4B515000EB59E = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 96C8CCD319F4B515000EB59E;
 					};
 				};
 			};
@@ -408,6 +412,10 @@
 					ProjectRef = 9626532C19F632340076C205 /* Alamofire.xcodeproj */;
 				},
 				{
+					ProductGroup = 96A86A9419F6791E003B43C9 /* Products */;
+					ProjectRef = 96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */;
+				},
+				{
 					ProductGroup = 96A86A6D19F64DB2003B43C9 /* Products */;
 					ProjectRef = 96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */;
 				},
@@ -415,7 +423,6 @@
 			projectRoot = "";
 			targets = (
 				96C8CCD319F4B515000EB59E /* CNodeJS */,
-				96C8CCE819F4B515000EB59E /* CNodeJSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +456,34 @@
 			remoteRef = 96A86A7D19F6507E003B43C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		96A86A9B19F6791E003B43C9 /* libMMMarkdown-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMMMarkdown-Mac.a";
+			remoteRef = 96A86A9A19F6791E003B43C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96A86A9D19F6791E003B43C9 /* libMMMarkdown-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMMMarkdown-iOS.a";
+			remoteRef = 96A86A9C19F6791E003B43C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96A86A9F19F6791E003B43C9 /* MMMarkdownTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MMMarkdownTests.xctest;
+			remoteRef = 96A86A9E19F6791E003B43C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96A86AA119F6791E003B43C9 /* mmmarkdown */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = mmmarkdown;
+			remoteRef = 96A86AA019F6791E003B43C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -459,13 +494,6 @@
 				96C8CCDF19F4B515000EB59E /* Main.storyboard in Resources */,
 				96C8CCE419F4B515000EB59E /* LaunchScreen.xib in Resources */,
 				96C8CCE119F4B515000EB59E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96C8CCE719F4B515000EB59E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,14 +518,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96C8CCE519F4B515000EB59E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96C8CCF019F4B515000EB59E /* CNodeJSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -510,11 +530,6 @@
 			isa = PBXTargetDependency;
 			name = PKHUD;
 			targetProxy = 96A86A7819F64DE3003B43C9 /* PBXContainerItemProxy */;
-		};
-		96C8CCEB19F4B515000EB59E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 96C8CCD319F4B515000EB59E /* CNodeJS */;
-			targetProxy = 96C8CCEA19F4B515000EB59E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -629,6 +644,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CNodeJS/Vendors",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)/MMMarkdown-iOS/public/",
+				);
 				INFOPLIST_FILE = CNodeJS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -647,46 +667,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CNodeJS/Vendors",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)/MMMarkdown-iOS/public/",
+				);
 				INFOPLIST_FILE = CNodeJS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
-			};
-			name = Release;
-		};
-		96C8CCF719F4B515000EB59E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CNodeJSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNodeJS.app/CNodeJS";
-			};
-			name = Debug;
-		};
-		96C8CCF819F4B515000EB59E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CNodeJSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNodeJS.app/CNodeJS";
 			};
 			name = Release;
 		};
@@ -707,15 +698,6 @@
 			buildConfigurations = (
 				96C8CCF419F4B515000EB59E /* Debug */,
 				96C8CCF519F4B515000EB59E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		96C8CCF619F4B515000EB59E /* Build configuration list for PBXNativeTarget "CNodeJSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96C8CCF719F4B515000EB59E /* Debug */,
-				96C8CCF819F4B515000EB59E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

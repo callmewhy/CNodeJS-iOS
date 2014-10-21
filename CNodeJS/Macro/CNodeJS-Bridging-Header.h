@@ -10,5 +10,6 @@
 #define CNodeJS_CNodeJS_Bridging_Header_h
 
 #import "HMSegmentedControl.h"
+#import <MMMarkdown/MMMarkdown.h>
 
 #endif

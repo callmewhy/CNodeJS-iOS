@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -42,10 +42,8 @@ class DetailViewController: UIViewController {
         
         // set content view
         if let content = topic?.content as String? {
-            var markdown = Markdown()
-            let outputHtml: String = markdown.transform(content)
-            contentWebView.loadHTMLString(outputHtml, baseURL: nil)
-            contentWebViewHeight.constant = contentWebView.scrollView.contentSize.height
+            let outputHtml: String = MMMarkdown.HTMLStringWithMarkdown(topic?.content, error: nil)
+            contentWebView.loadHTMLString(outputHtml, baseURL: NSURL(string: "markdown"))
         }
     }
     
@@ -55,6 +53,28 @@ class DetailViewController: UIViewController {
     }
     
 
+    // MARK: - UIWebViewDelegate
+    func webViewDidFinishLoad(webView: UIWebView) {
+        var frame = webView.frame
+        var fittingSize = webView.sizeThatFits(CGSizeZero)
+        contentWebViewHeight.constant = fittingSize.height
+    }
+
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        if (request.URL.description.hasSuffix("markdown")) {
+            return true
+        }
+        
+        UIApplication.sharedApplication().openURL(request.URL)
+        return false
+        
+    }
+    
+
+
+    
     /*
     // MARK: - Navigation
 
