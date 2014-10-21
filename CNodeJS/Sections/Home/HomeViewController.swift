@@ -97,14 +97,27 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     }
     
     
-    /*
+    // MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    }
+    
+
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        let id = segue.identifier as String!
+        switch id {
+        case "goDetail" :
+            let selIndexPath = myTableView.indexPathForSelectedRow()!
+            myTableView.deselectRowAtIndexPath(selIndexPath, animated: false)
+            var detailVC = segue.destinationViewController as DetailViewController
+            var currentArray = TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex]
+            detailVC.topic = currentArray[selIndexPath.row] as TopicModel
+        default:
+            println("default segue")
+        }
+
     }
-    */
     
 }

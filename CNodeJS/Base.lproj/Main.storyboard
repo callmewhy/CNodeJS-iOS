@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xrQ-zN-orW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xrQ-zN-orW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="30" id="XNW-xr-Bbt"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Sv-Ax-3pW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Sv-Ax-3pW">
                                 <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -96,6 +96,7 @@
                                             <outlet property="authorLabel" destination="wRO-0P-LHS" id="XbG-EC-bOQ"/>
                                             <outlet property="lastTimeLabel" destination="5d0-m1-xrV" id="flT-b9-smc"/>
                                             <outlet property="titleLabel" destination="QHy-Fp-T2J" id="hcx-OI-A7E"/>
+                                            <segue destination="Cyb-9z-7Wh" kind="show" identifier="goDetail" id="l9E-0X-tce"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -123,7 +124,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypf-bV-qwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="396"/>
+            <point key="canvasLocation" x="818" y="396"/>
+        </scene>
+        <!--详情-->
+        <scene sceneID="vFY-dz-jYo">
+            <objects>
+                <viewController id="Cyb-9z-7Wh" customClass="DetailViewController" customModule="CNodeJS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qaS-Wr-ydY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xhP-cn-HKy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LYZ-f3-c0d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="详情" id="Ugr-Mz-F9v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xf-xV-11J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="396"/>
         </scene>
     </scenes>
 </document>

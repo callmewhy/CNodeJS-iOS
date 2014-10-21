@@ -16,6 +16,7 @@
 		96A86A6B19F64D39003B43C9 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9626533219F632350076C205 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96A86A7519F64DCB003B43C9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; };
 		96A86A7719F64DDA003B43C9 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96A86A7B19F6507C003B43C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A86A7A19F6507C003B43C9 /* DetailViewController.swift */; };
 		96BCCF9819F55A27003A7AB5 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */; };
 		96BCCF9B19F55C88003A7AB5 /* ConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */; };
 		96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCD919F4B515000EB59E /* AppDelegate.swift */; };
@@ -62,6 +63,13 @@
 			remoteGlobalIDString = F996321D19514FD8001F73CA;
 			remoteInfo = PKHUD;
 		};
+		96A86A7D19F6507E003B43C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9626532C19F632340076C205 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
 		96C8CCEA19F4B515000EB59E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96C8CCCC19F4B515000EB59E /* Project object */;
@@ -93,6 +101,7 @@
 		96A31A3D19F4F369004E6941 /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		96A31A3F19F4FAB3004E6941 /* TopicStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicStore.swift; sourceTree = "<group>"; };
 		96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PKHUD.xcodeproj; path = PKHUD/PKHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
+		96A86A7A19F6507C003B43C9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertTool.swift; sourceTree = "<group>"; };
 		96C8CCD419F4B515000EB59E /* CNodeJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNodeJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9626533219F632350076C205 /* Alamofire.framework */,
+				96A86A7E19F6507E003B43C9 /* AlamofireTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 		96C8CD0719F4BD53000EB59E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				96A86A7A19F6507C003B43C9 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -428,6 +439,13 @@
 			remoteRef = 96A86A7319F64DB2003B43C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		96A86A7E19F6507E003B43C9 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 96A86A7D19F6507E003B43C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -462,6 +480,7 @@
 				96C8CD0319F4BB92000EB59E /* HMSegmentedControl.m in Sources */,
 				96A31A3719F4D4B1004E6941 /* HomeViewController.swift in Sources */,
 				96A31A3E19F4F369004E6941 /* TopicModel.swift in Sources */,
+				96A86A7B19F6507C003B43C9 /* DetailViewController.swift in Sources */,
 				96A31A4019F4FAB3004E6941 /* TopicStore.swift in Sources */,
 				96BCCF9819F55A27003A7AB5 /* TopicTableViewCell.swift in Sources */,
 			);
@@ -604,7 +623,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Alamofire/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/CNodeJS/Vendors",
 				);
 				INFOPLIST_FILE = CNodeJS/Info.plist;
@@ -623,7 +641,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Alamofire/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/CNodeJS/Vendors",
 				);
 				INFOPLIST_FILE = CNodeJS/Info.plist;
