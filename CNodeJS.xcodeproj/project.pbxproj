@@ -17,6 +17,7 @@
 		96A86A7519F64DCB003B43C9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; };
 		96A86A7719F64DDA003B43C9 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96A86A7B19F6507C003B43C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A86A7A19F6507C003B43C9 /* DetailViewController.swift */; };
+		96A86A8019F65FDB003B43C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A86A7F19F65FDB003B43C9 /* API.swift */; };
 		96BCCF9819F55A27003A7AB5 /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */; };
 		96BCCF9B19F55C88003A7AB5 /* ConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */; };
 		96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCD919F4B515000EB59E /* AppDelegate.swift */; };
@@ -102,6 +103,7 @@
 		96A31A3F19F4FAB3004E6941 /* TopicStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicStore.swift; sourceTree = "<group>"; };
 		96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PKHUD.xcodeproj; path = PKHUD/PKHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
 		96A86A7A19F6507C003B43C9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		96A86A7F19F65FDB003B43C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		96BCCF9719F55A27003A7AB5 /* TopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewCell.swift; sourceTree = "<group>"; };
 		96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertTool.swift; sourceTree = "<group>"; };
 		96C8CCD419F4B515000EB59E /* CNodeJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNodeJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +311,7 @@
 			children = (
 				96C8CD0619F4BCF2000EB59E /* CNodeJS-Bridging-Header.h */,
 				96A31A3819F4DA5D004E6941 /* Color.swift */,
+				96A86A7F19F65FDB003B43C9 /* API.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A86A8019F65FDB003B43C9 /* API.swift in Sources */,
 				96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */,
 				96BCCF9B19F55C88003A7AB5 /* ConvertTool.swift in Sources */,
 				96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */,

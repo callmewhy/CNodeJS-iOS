@@ -9,7 +9,7 @@
 
 class Author {
     var avatarUrl = ""
-    var loginnName = ""
+    var loginName = ""
 }
 
 class TopicModel: NSObject {

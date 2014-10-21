@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xrQ-zN-orW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -137,9 +138,46 @@
                     <view key="view" contentMode="scaleToFill" id="LYZ-f3-c0d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of topic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-J2-OgT">
+                                <rect key="frame" x="16" y="64" width="568" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布于：14天前  作者：callmewhy 6381 次浏览  来自：分享" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMv-8c-EwT">
+                                <rect key="frame" x="150" y="98" width="299.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-kg-btg">
+                                <rect key="frame" x="16" y="126.5" width="568" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yVf-5v-X7D"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dMv-8c-EwT" firstAttribute="centerX" secondItem="l1d-J2-OgT" secondAttribute="centerX" id="0EH-b9-rch"/>
+                            <constraint firstItem="l1d-J2-OgT" firstAttribute="top" secondItem="qaS-Wr-ydY" secondAttribute="bottom" id="OlJ-dq-Ioa"/>
+                            <constraint firstItem="l1d-J2-OgT" firstAttribute="leading" secondItem="LYZ-f3-c0d" secondAttribute="leadingMargin" id="PB1-17-F5f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l1d-J2-OgT" secondAttribute="trailing" id="cWy-c6-2oQ"/>
+                            <constraint firstItem="IRM-kg-btg" firstAttribute="leading" secondItem="l1d-J2-OgT" secondAttribute="leading" id="mQv-gK-6th"/>
+                            <constraint firstItem="IRM-kg-btg" firstAttribute="top" secondItem="dMv-8c-EwT" secondAttribute="bottom" constant="15" id="ngL-7C-XdK"/>
+                            <constraint firstItem="IRM-kg-btg" firstAttribute="trailing" secondItem="l1d-J2-OgT" secondAttribute="trailing" id="w6U-no-RUC"/>
+                            <constraint firstItem="dMv-8c-EwT" firstAttribute="top" secondItem="l1d-J2-OgT" secondAttribute="bottom" constant="15" id="z4L-0t-Mjs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="详情" id="Ugr-Mz-F9v"/>
+                    <connections>
+                        <outlet property="contentWebView" destination="IRM-kg-btg" id="vxT-lL-yDx"/>
+                        <outlet property="contentWebViewHeight" destination="yVf-5v-X7D" id="bcV-oH-3nD"/>
+                        <outlet property="infoLabel" destination="dMv-8c-EwT" id="ORi-QI-RJY"/>
+                        <outlet property="titleLabel" destination="l1d-J2-OgT" id="wVd-RZ-NfM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xf-xV-11J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

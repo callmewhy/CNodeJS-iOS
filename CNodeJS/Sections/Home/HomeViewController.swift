@@ -35,7 +35,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     func setupSementedControl() {
         
         // Content
-        segmentedControl.sectionTitles = ["全部","分享","问答","招聘"]
+        segmentedControl.sectionTitles = [String](TAB_DIC.values)
         
         // Type
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             let myItem = item as TopicModel
             myCell.titleLabel.text = myItem.title
             myCell.lastTimeLabel.text = myItem.lastTime
-            myCell.authorLabel.text = myItem.author?.loginnName
+            myCell.authorLabel.text = myItem.author?.loginName
         }
         myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
@@ -95,13 +95,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         myDataSource.items = TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex]
         myTableView.reloadData()
     }
-    
-    
-    // MARK: - UITableViewDelegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-    }
-    
 
     // MARK: - Navigation
     

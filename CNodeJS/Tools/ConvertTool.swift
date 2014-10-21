@@ -54,7 +54,7 @@ class ConvertTool: NSObject {
         
         if let temp = topicDic.objectForKey("author") as? NSDictionary {
             var author = Author()
-            author.loginnName = temp.objectForKey("loginname") as String
+            author.loginName = temp.objectForKey("loginname") as String
             author.avatarUrl = temp.objectForKey("avatar_url") as String
             oldTopic.author = author
         }
