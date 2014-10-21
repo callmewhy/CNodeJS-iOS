@@ -31,7 +31,7 @@ class ArrayDataSource: NSObject, UITableViewDataSource {
 
         if (items.count == 0) {
             var msgLabel = UILabel(frame: tableView.frame)
-            msgLabel.text = "暂无内容"
+            msgLabel.text = "暂无内容，请下拉刷新"
             msgLabel.numberOfLines = 0
             msgLabel.textAlignment = .Center
             tableView.backgroundView = msgLabel

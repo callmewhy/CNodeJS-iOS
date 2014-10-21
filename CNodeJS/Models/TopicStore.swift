@@ -7,8 +7,6 @@
 //
 
 import Alamofire
-import PKHUD
-
 
 private let _sharedTopicStore = TopicStore()
 
@@ -42,9 +40,6 @@ class TopicStore: NSObject {
 
     func loadData(type:TopicType, mode:LoadMode = .Refresh, finishedClosure:()->Void) {
         
-        HUDController.sharedController.contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.show()
-        
         if(mode == .Refresh) {
             nowPages[type.rawValue] = 0
         }else if(mode == .LoadMore) {
@@ -62,7 +57,7 @@ class TopicStore: NSObject {
                     var newTopic = ConvertTool.addDicToTopic(topicDic, oldTopic: topic)
                     TopicStore.sharedInstance.topicArray[type.rawValue].append(newTopic)
                 }
-                HUDController.sharedController.hide(animated: false)
+
                 finishedClosure()
         }
         

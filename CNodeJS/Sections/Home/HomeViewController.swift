@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var segmentedControl: HMSegmentedControl!
     @IBOutlet weak var myTableView: UITableView!
     
+    var refreshControl = UIRefreshControl()
+    
     var myDataSource: ArrayDataSource?
     
     override func viewDidLoad() {
@@ -21,9 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         // Setup UI
         setupSementedControl()
         setupTableView()
-        
-        // Load data
-        self.refreshTableData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,11 +51,19 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         // Closure
         segmentedControl.indexChangeBlock = { sIndex in
-            self.checkTableData()
+            self.updateDataSource()
         }
     }
 
     func setupTableView() {
+        
+        // add refresh control
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新")
+        refreshControl.addTarget(self, action: Selector("pullDown"), forControlEvents: .ValueChanged)
+
+        myTableView.addSubview(refreshControl)
+        
+        // set data source
         var cellConfigureClosure: CellConfigureClosure = { cell,item in
             let myCell = cell as TopicTableViewCell
             let myItem = item as TopicModel
@@ -67,28 +74,28 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
         
-        checkTableData()
-        
     }
     
-    // check data of current type
-    func checkTableData() {
-        var nowIndex = segmentedControl.selectedSegmentIndex
-        if(TopicStore.sharedInstance.topicArray[nowIndex].count == 0) {
-            TopicStore.sharedInstance.loadData(TopicType(rawValue: nowIndex)!, finishedClosure:{
-                self.refreshTableData()
-            })
-        }else{
-            refreshTableData()
-        }
+    // pull down to refresh data
+    func pullDown() {
+        refreshTableData()
+    }
+    
+    // refresh tablew data from api
+    func refreshTableData() {
+        TopicStore.sharedInstance.loadData(TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, finishedClosure:{
+            self.updateDataSource()
+            self.refreshControl.endRefreshing()
+        })
     }
     
     // update datasource
-    func refreshTableData() {
+    func updateDataSource() {
         var myDataSource = myTableView.dataSource as ArrayDataSource
         myDataSource.items = TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex]
         myTableView.reloadData()
     }
+    
     
     /*
     // MARK: - Navigation
