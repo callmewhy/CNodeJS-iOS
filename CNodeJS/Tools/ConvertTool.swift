@@ -10,55 +10,61 @@ import UIKit
 
 class ConvertTool: NSObject {
     
-    /**
-    Add dictionary to the topic object
-    
-    :param: topicDic dictionary with data
-    :param: oldTopic target topic object
-    
-    :returns: new topic object with new data
-    */
-    class func addDicToTopic(topicDic:NSDictionary, oldTopic:TopicModel) -> TopicModel {
+    class func getTopicFromDic(topicDic: [String:AnyObject]) -> TopicModel {
 
-        if let temp = topicDic.objectForKey("id") as? String {
-            oldTopic.id = temp
+        var topic = TopicModel()
+        
+        if let temp = topicDic["id"] as? String {
+            topic.id = temp
         }
         
-        if let temp = topicDic.objectForKey("author_id") as? String {
-            oldTopic.authorId = temp
+        if let temp = topicDic["author_id"] as? String {
+            topic.authorId = temp
         }
         
-        if let temp = topicDic.objectForKey("tab") as? String {
-            oldTopic.tab = temp
+        if let temp = topicDic["tab"] as? String {
+            topic.tab = temp
         }
         
-        if let temp = topicDic.objectForKey("content") as? String {
-            oldTopic.content = temp
+        if let temp = topicDic["content"] as? String {
+            topic.content = temp
         }
         
-        if let temp = topicDic.objectForKey("title") as? String {
-            oldTopic.title = temp
+        if let temp = topicDic["title"] as? String {
+            topic.title = temp
         }
         
-        if let temp = topicDic.objectForKey("last_reply_at") as? String {
-            oldTopic.lastTime = temp
+        if let temp = topicDic["last_reply_at"] as? String {
+            topic.lastTime = temp
         }
         
-        if let temp = topicDic.objectForKey("good") as? Bool {
-            oldTopic.good = temp
+        if let temp = topicDic["good"] as? Bool {
+            topic.good = temp
         }
         
-        if let temp = topicDic.objectForKey("top") as? Bool {
-            oldTopic.top = temp
+        if let temp = topicDic["top"] as? Bool {
+            topic.top = temp
         }
         
-        if let temp = topicDic.objectForKey("author") as? NSDictionary {
+        if let temp = topicDic["author"] as? [String:AnyObject] {
             var author = Author()
-            author.loginName = temp.objectForKey("loginname") as String
-            author.avatarUrl = temp.objectForKey("avatar_url") as String
-            oldTopic.author = author
+            author.loginName = temp["loginname"] as String
+            author.avatarUrl = temp["avatar_url"] as String
+            topic.author = author
         }
         
-        return oldTopic
+        
+        if let temp = topicDic["replies"] as? [[String:AnyObject]] {
+            for item in temp {
+                var reply = Reply()
+                reply.id = item["id"] as? String
+                reply.content = item["content"] as? String
+                reply.ups = item["ups"] as? [String]
+                reply.createAt = item["create_at"] as? String
+                topic.replies.append(reply)
+            }
+        }
+        
+        return topic
     }
 }

@@ -13,14 +13,25 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var contentWebView: UIWebView!
-    
     @IBOutlet weak var contentWebViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var replyTableView: UITableView!
+    @IBOutlet weak var replyTableViewHeight: NSLayoutConstraint!
+    
+    
+    
     var topic: TopicModel?
+    
+    var replyDataSource: ArrayDataSource?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupFromTopic()
+    }
+    
+    func setupFromTopic() {
         // get title
         titleLabel.text = topic?.title
         
@@ -48,6 +59,19 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
+    func setupReplyTableView() {
+        var cellConfigureClosure: CellConfigureClosure = { cell,item in
+            let myCell = cell as ReplyTableViewCell
+            let myItem = item as Reply
+            myCell.timeLabel.text = myItem.createAt
+            myCell.contentLabel.text = myItem.content
+        }
+        replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
+        replyTableView.dataSource = replyDataSource
+        replyTableViewHeight.constant = CGFloat(topic!.replies.count * 50)
+        replyTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,6 +83,13 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         var frame = webView.frame
         var fittingSize = webView.sizeThatFits(CGSizeZero)
         contentWebViewHeight.constant = fittingSize.height
+        
+        if let id = topic?.id {
+            TopicStore.sharedInstance.loadTopic(id, finishedClosure: {
+                self.topic = TopicStore.sharedInstance.getTopic(id)
+                self.setupReplyTableView()
+            })
+        }
     }
 
     

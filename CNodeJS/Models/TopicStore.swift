@@ -19,26 +19,30 @@ enum TopicType:Int {
 
 enum LoadMode:Int {
     case Refresh    = 0
-    case LoadMore  = 1
+    case LoadMore   = 1
 }
 
 class TopicStore: NSObject {
     
-    // topic data array
-    var topicArray = [[TopicModel](),[TopicModel](),[TopicModel](),[TopicModel]()]
+    // topic data
+    private var topicArray = [[TopicModel](),[TopicModel](),[TopicModel](),[TopicModel]()]
+    private var topicDictionay = [String:TopicModel]()
     
     // current page number
-    var nowPages = [1,1,1,1]
-    
-    // topics' values in parameter of api
-    var topicValues = ["all","share","ask","job"]
+    private var nowPages = [1,1,1,1]
 
     // singleton
     class var sharedInstance : TopicStore {
         return _sharedTopicStore
     }
-
-    func loadData(type:TopicType, mode:LoadMode = .Refresh, finishedClosure:()->Void) {
+    
+    subscript(index: Int) -> [TopicModel] {
+        get {
+            return topicArray[index]
+        }
+    }
+    
+    func loadTopics(type:TopicType, mode:LoadMode = .Refresh, finishedClosure:()->Void) {
         
         if(mode == .Refresh) {
             nowPages[type.rawValue] = 0
@@ -46,21 +50,38 @@ class TopicStore: NSObject {
             nowPages[type.rawValue] += 1
         }
         
-        let url = "https://cnodejs.org/api/v1/topics?page=\(nowPages[type.rawValue])&tab=\(topicValues[type.rawValue])"
+        let url = "https://cnodejs.org/api/v1/topics?page=\(nowPages[type.rawValue])&tab=\(TAB_KEYS[type.rawValue])"
         
         Alamofire.request(.GET, url)
             .responseJSON {(_, _, JSON, _) in
-                var topics = JSON as [AnyObject]
-                for item in topics {
-                    var topic = TopicModel()
+                var items = JSON as [AnyObject]
+                for item in items {
                     var topicDic = item as [String:AnyObject]
-                    var newTopic = ConvertTool.addDicToTopic(topicDic, oldTopic: topic)
-                    TopicStore.sharedInstance.topicArray[type.rawValue].append(newTopic)
+                    var newTopic = ConvertTool.getTopicFromDic(topicDic)
+                    self.topicArray[type.rawValue].append(newTopic)
                 }
-
+                
                 finishedClosure()
         }
         
+    }
+
+    
+    func loadTopic(topicId: String, finishedClosure:()->Void) {
+        
+        let url = "https://cnodejs.org/api/v1/topic/\(topicId)"
+        
+        Alamofire.request(.GET, url)
+            .responseJSON {(_, _, JSON, _) in
+                var dic = JSON as [String:AnyObject]
+                var newTopic = ConvertTool.getTopicFromDic(dic)
+                self.topicDictionay[newTopic.id!] = newTopic
+                finishedClosure()
+        }
+    }
+    
+    func getTopic(topicId: String) -> TopicModel? {
+        return topicDictionay[topicId]
     }
     
 }

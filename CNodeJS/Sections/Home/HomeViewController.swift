@@ -35,7 +35,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     func setupSementedControl() {
         
         // Content
-        segmentedControl.sectionTitles = [String](TAB_DIC.values)
+        segmentedControl.sectionTitles = TAB_VALUES
         
         // Type
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             myCell.lastTimeLabel.text = myItem.lastTime
             myCell.authorLabel.text = myItem.author?.loginName
         }
-        myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
+        myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
         
     }
@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     // refresh tablew data from api
     func refreshTableData() {
-        TopicStore.sharedInstance.loadData(TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, finishedClosure:{
+        TopicStore.sharedInstance.loadTopics(TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, finishedClosure:{
             self.updateDataSource()
             self.refreshControl.endRefreshing()
         })
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     // update datasource
     func updateDataSource() {
         var myDataSource = myTableView.dataSource as ArrayDataSource
-        myDataSource.items = TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex]
+        myDataSource.items = TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex]
         myTableView.reloadData()
     }
 
@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             let selIndexPath = myTableView.indexPathForSelectedRow()!
             myTableView.deselectRowAtIndexPath(selIndexPath, animated: false)
             var detailVC = segue.destinationViewController as DetailViewController
-            var currentArray = TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex]
+            var currentArray = TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex]
             detailVC.topic = currentArray[selIndexPath.row] as TopicModel
         default:
             println("default segue")
