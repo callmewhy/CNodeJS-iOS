@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class HomeViewController: UIViewController, UITableViewDelegate {
     
@@ -61,6 +62,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         if (TopicStore.sharedInstance[index].count > 0) {
             self.updateDataSource();
         } else {
+            HUDController.sharedController.contentView = HUDContentView.ProgressView()
+            HUDController.sharedController.show()
             self.refreshTableData();
         }
     }
@@ -95,6 +98,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         TopicStore.sharedInstance.loadTopics(TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, finishedClosure:{
             self.updateDataSource()
             self.refreshControl.endRefreshing()
+            HUDController.sharedController.hide()
         })
     }
     
