@@ -51,14 +51,14 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         // Closure
         segmentedControl.indexChangeBlock = { sIndex in
-            self.switchDataSource(sIndex);
+            self.switchDataSource(index: sIndex);
         }
         
-        self.switchDataSource(0);
+        self.switchDataSource();
     }
     
-    func switchDataSource(index : NSInteger) {
-        if (TopicStore.sharedInstance.topicArray[index].count > 0) {
+    func switchDataSource(index : NSInteger = 0) {
+        if (TopicStore.sharedInstance[index].count > 0) {
             self.updateDataSource();
         } else {
             self.refreshTableData();

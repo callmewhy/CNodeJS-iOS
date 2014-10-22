@@ -206,12 +206,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-vj-B7c" userLabel="ReplyView">
                                                 <rect key="frame" x="10" y="103" width="580" height="100"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mt1-FV-Atp">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mt1-FV-Atp">
                                                         <rect key="frame" x="0.0" y="0.0" width="580" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="F05-QF-ina"/>
                                                         </constraints>
+                                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                                         <prototypes>
                                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replyCell" rowHeight="50" id="2BT-YZ-cmA" customClass="ReplyTableViewCell" customModule="CNodeJS" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
@@ -219,9 +220,10 @@
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2BT-YZ-cmA" id="shb-lS-zCc">
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-TM-9tA">
-                                                                            <rect key="frame" x="108" y="8" width="464" height="33.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-TM-9tA">
+                                                                            <rect key="frame" x="113" y="0.0" width="467" height="49.5"/>
+                                                                            <string key="text">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</string>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -246,13 +248,13 @@
                                                                         <constraint firstItem="rpF-eN-fHf" firstAttribute="top" secondItem="HTQ-S7-id9" secondAttribute="bottom" id="Eza-ir-Mk3"/>
                                                                         <constraint firstAttribute="bottom" secondItem="rpF-eN-fHf" secondAttribute="bottom" id="LqB-VU-7dN"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="leading" secondItem="shb-lS-zCc" secondAttribute="leadingMargin" id="R92-fy-Kig"/>
-                                                                        <constraint firstItem="zrN-TM-9tA" firstAttribute="leading" secondItem="HTQ-S7-id9" secondAttribute="trailing" id="VBH-5q-yBY"/>
+                                                                        <constraint firstItem="zrN-TM-9tA" firstAttribute="leading" secondItem="HTQ-S7-id9" secondAttribute="trailing" constant="5" id="VBH-5q-yBY"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="top" id="cIQ-nI-K3S"/>
-                                                                        <constraint firstAttribute="bottomMargin" secondItem="zrN-TM-9tA" secondAttribute="bottom" id="gtz-Wm-4mZ"/>
-                                                                        <constraint firstAttribute="trailingMargin" secondItem="zrN-TM-9tA" secondAttribute="trailing" id="lTd-FE-8xL"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="zrN-TM-9tA" secondAttribute="bottom" id="gtz-Wm-4mZ"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="zrN-TM-9tA" secondAttribute="trailing" id="lTd-FE-8xL"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="leading" secondItem="rpF-eN-fHf" secondAttribute="leading" id="md1-4b-wie"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="trailing" secondItem="rpF-eN-fHf" secondAttribute="trailing" id="qnU-rF-3Nn"/>
-                                                                        <constraint firstItem="zrN-TM-9tA" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="topMargin" id="sRP-Gd-Gnj"/>
+                                                                        <constraint firstItem="zrN-TM-9tA" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="top" id="sRP-Gd-Gnj"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
@@ -262,6 +264,11 @@
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

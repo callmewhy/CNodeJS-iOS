@@ -61,6 +61,16 @@ class ConvertTool: NSObject {
                 reply.content = item["content"] as? String
                 reply.ups = item["ups"] as? [String]
                 reply.createAt = item["create_at"] as? String
+                
+                
+                if let tempAuthor = item["author"] as? [String:AnyObject] {
+                    var author = Author()
+                    author.loginName = tempAuthor["loginname"] as String
+                    author.avatarUrl = tempAuthor["avatar_url"] as String
+                    reply.author = author
+                }
+
+                
                 topic.replies.append(reply)
             }
         }

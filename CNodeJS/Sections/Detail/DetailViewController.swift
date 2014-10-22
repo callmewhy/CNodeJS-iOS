@@ -65,11 +65,13 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
             let myItem = item as Reply
             myCell.timeLabel.text = myItem.createAt
             myCell.contentLabel.text = myItem.content
+            myCell.nameLabel.text = myItem.author?.loginName
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
         replyTableView.dataSource = replyDataSource
         replyTableViewHeight.constant = CGFloat(topic!.replies.count * 50)
         replyTableView.reloadData()
+        replyTableView.hidden = false
     }
     
     override func didReceiveMemoryWarning() {
