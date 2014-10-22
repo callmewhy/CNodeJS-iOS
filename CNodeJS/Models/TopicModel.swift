@@ -12,6 +12,17 @@ class Author {
     var loginName = ""
 }
 
+
+
+class Reply: NSObject {
+    var id: String?
+    var author: Author?
+    var content: String?
+    var ups: [String]?
+    var createAt: String?
+}
+
+
 class TopicModel: NSObject {
     var id: String?
     var authorId: String?
@@ -22,6 +33,6 @@ class TopicModel: NSObject {
     var good: Bool?
     var top: Bool?
     var author: Author?
-    var replies: String?
+    var replies: [Reply] = []
     
 }
