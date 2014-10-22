@@ -5,6 +5,23 @@ CNodeJS
 An iOS app for [cnodejs.org](https://cnodejs.org/) .
 
 
+Go to [wiki](https://github.com/callmewhy/CNodeJS-iOS/wiki) for more information.
+
+
+## Contributing
+
+Want to contribute? Great!
+
+- Open an issue to tell me about your plan
+- Fork it
+- Create a branch
+- Commit your changes
+- Push to the branch
+- Open a Pull Request
+- Waiting for me :-)
+
+
+
 ## Installation
 
 - git submodule init
