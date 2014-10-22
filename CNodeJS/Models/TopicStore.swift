@@ -42,10 +42,11 @@ class TopicStore: NSObject {
         }
     }
     
-    func loadTopics(type:TopicType, mode:LoadMode = .Refresh, finishedClosure:()->Void) {
+    func loadTopics(#type:TopicType, mode:LoadMode, finishedClosure:()->Void) {
         
         if(mode == .Refresh) {
-            nowPages[type.rawValue] = 0
+            nowPages[type.rawValue] = 1
+            self.topicArray[type.rawValue].removeAll(keepCapacity: false)
         }else if(mode == .LoadMore) {
             nowPages[type.rawValue] += 1
         }
@@ -67,7 +68,7 @@ class TopicStore: NSObject {
     }
 
     
-    func loadTopic(topicId: String, finishedClosure:()->Void) {
+    func loadTopic(#topicId: String, finishedClosure:()->Void) {
         
         let url = "https://cnodejs.org/api/v1/topic/\(topicId)"
         
@@ -80,7 +81,7 @@ class TopicStore: NSObject {
         }
     }
     
-    func getTopic(topicId: String) -> TopicModel? {
+    func getTopic(#topicId: String) -> TopicModel? {
         return topicDictionay[topicId]
     }
     

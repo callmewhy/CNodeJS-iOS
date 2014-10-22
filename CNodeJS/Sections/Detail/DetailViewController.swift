@@ -87,8 +87,8 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         contentWebViewHeight.constant = fittingSize.height
         
         if let id = topic?.id {
-            TopicStore.sharedInstance.loadTopic(id, finishedClosure: {
-                self.topic = TopicStore.sharedInstance.getTopic(id)
+            TopicStore.sharedInstance.loadTopic(topicId: id, finishedClosure: {
+                self.topic = TopicStore.sharedInstance.getTopic(topicId: id)
                 self.setupReplyTableView()
             })
         }

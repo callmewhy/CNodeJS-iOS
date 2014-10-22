@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     var myDataSource: ArrayDataSource?
     
+    var isLoadingMore = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,16 +59,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         self.switchDataSource();
     }
-    
-    func switchDataSource(index : NSInteger = 0) {
-        if (TopicStore.sharedInstance[index].count > 0) {
-            self.updateDataSource();
-        } else {
-            HUDController.sharedController.contentView = HUDContentView.ProgressView()
-            HUDController.sharedController.show()
-            self.refreshTableData();
-        }
-    }
 
     func setupTableView() {
         
@@ -88,14 +80,26 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         myTableView.dataSource = myDataSource
     }
     
-    // pull down to refresh data
+    // MARK: - uitableview
+    // switch data source while switching tab
+    func switchDataSource(index : NSInteger = 0) {
+        if (TopicStore.sharedInstance[index].count > 0) {
+            self.updateDataSource();
+        } else {
+            HUDController.sharedController.contentView = HUDContentView.ProgressView()
+            HUDController.sharedController.show()
+            self.refreshTableData();
+        }
+    }
+    
+    // refresh control pull down
     func pullDown() {
         refreshTableData()
     }
     
     // refresh tablew data from api
     func refreshTableData() {
-        TopicStore.sharedInstance.loadTopics(TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, finishedClosure:{
+        TopicStore.sharedInstance.loadTopics(type: TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, mode:.Refresh, finishedClosure:{
             self.updateDataSource()
             self.refreshControl.endRefreshing()
             HUDController.sharedController.hide()
@@ -107,6 +111,21 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         var myDataSource = myTableView.dataSource as ArrayDataSource
         myDataSource.items = TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex]
         myTableView.reloadData()
+    }
+    
+    
+    // MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if let count = myDataSource?.items.count {
+            if indexPath.row == count - 5 && !isLoadingMore {
+                isLoadingMore = true
+                TopicStore.sharedInstance.loadTopics(type: TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, mode:.LoadMore, finishedClosure:{
+                    self.isLoadingMore = false
+                    self.updateDataSource()
+                })
+            }
+        }
     }
 
     // MARK: - Navigation
