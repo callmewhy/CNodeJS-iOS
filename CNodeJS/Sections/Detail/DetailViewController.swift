@@ -55,7 +55,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         // set content view
         if let content = topic?.content as String? {
             let outputHtml: String = MMMarkdown.HTMLStringWithMarkdown(topic?.content, error: nil)
-            contentWebView.loadHTMLString(outputHtml, baseURL: NSURL(string: "markdown"))
+            contentWebView.loadHTMLString(outputHtml, baseURL: NSURL(string: "https://cnodejs.org/"))
         }
     }
     
@@ -97,7 +97,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        if (request.URL.description.hasSuffix("markdown")) {
+        if (request.URL.description.hasPrefix("https://cnodejs.org/")) {
             return true
         }
         
