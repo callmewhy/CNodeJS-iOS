@@ -51,7 +51,17 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         // Closure
         segmentedControl.indexChangeBlock = { sIndex in
-            self.updateDataSource()
+            self.switchDataSource(sIndex);
+        }
+        
+        self.switchDataSource(0);
+    }
+    
+    func switchDataSource(index : NSInteger) {
+        if (TopicStore.sharedInstance.topicArray[index].count > 0) {
+            self.updateDataSource();
+        } else {
+            self.refreshTableData();
         }
     }
 
@@ -73,7 +83,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         }
         myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance.topicArray[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
-        
     }
     
     // pull down to refresh data
