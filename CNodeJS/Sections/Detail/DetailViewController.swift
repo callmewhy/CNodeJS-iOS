@@ -21,6 +21,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get title
         titleLabel.text = topic?.title
         
         // get tab name
