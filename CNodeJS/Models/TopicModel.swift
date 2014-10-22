@@ -7,7 +7,7 @@
 //
 
 
-class Author {
+class Author: NSObject {
     var avatarUrl = ""
     var loginName = ""
 }

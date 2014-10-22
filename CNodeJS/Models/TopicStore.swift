@@ -66,7 +66,7 @@ class TopicStore: NSObject {
         }
         
     }
-
+    
     
     func loadTopic(#topicId: String, finishedClosure:()->Void) {
         
