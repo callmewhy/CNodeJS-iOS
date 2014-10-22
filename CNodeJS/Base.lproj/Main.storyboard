@@ -30,7 +30,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vAc-NH-PN7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zhr-FI-AHv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enS-ls-ldr" customClass="HMSegmentedControl">
@@ -138,7 +138,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xhP-cn-HKy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LYZ-f3-c0d">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0T5-La-KPz">

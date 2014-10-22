@@ -14,6 +14,7 @@
 		96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3B19F4E323004E6941 /* ArrayDataSource.swift */; };
 		96A31A3E19F4F369004E6941 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3D19F4F369004E6941 /* TopicModel.swift */; };
 		96A31A4019F4FAB3004E6941 /* TopicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3F19F4FAB3004E6941 /* TopicStore.swift */; };
+		96A468A319F7EDFE00450992 /* HUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A468A219F7EDFE00450992 /* HUDTool.swift */; };
 		96A86A6B19F64D39003B43C9 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9626533219F632350076C205 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96A86A7519F64DCB003B43C9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; };
 		96A86A7719F64DDA003B43C9 /* PKHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96A86A7419F64DB2003B43C9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -124,6 +125,7 @@
 		96A31A3B19F4E323004E6941 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		96A31A3D19F4F369004E6941 /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		96A31A3F19F4FAB3004E6941 /* TopicStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicStore.swift; sourceTree = "<group>"; };
+		96A468A219F7EDFE00450992 /* HUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTool.swift; sourceTree = "<group>"; };
 		96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PKHUD.xcodeproj; path = PKHUD/PKHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
 		96A86A7A19F6507C003B43C9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		96A86A7F19F65FDB003B43C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				96BCCF9A19F55C88003A7AB5 /* ConvertTool.swift */,
+				96A468A219F7EDFE00450992 /* HUDTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A468A319F7EDFE00450992 /* HUDTool.swift in Sources */,
 				96A86A8019F65FDB003B43C9 /* API.swift in Sources */,
 				96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */,
 				962548A019F7B5B500F45539 /* ReplyTableViewCell.swift in Sources */,

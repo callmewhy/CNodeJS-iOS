@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 class HomeViewController: UIViewController, UITableViewDelegate {
     
@@ -86,8 +85,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         if (TopicStore.sharedInstance[index].count > 0) {
             self.updateDataSource();
         } else {
-            HUDController.sharedController.contentView = HUDContentView.ProgressView()
-            HUDController.sharedController.show()
+            HUDTool.showTextView("正在加载数据请稍后...")
             self.refreshTableData();
         }
     }
@@ -102,7 +100,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         TopicStore.sharedInstance.loadTopics(type: TopicType(rawValue: segmentedControl.selectedSegmentIndex)!, mode:.Refresh, finishedClosure:{
             self.updateDataSource()
             self.refreshControl.endRefreshing()
-            HUDController.sharedController.hide()
+            HUDTool.hideView(false)
         })
     }
     
