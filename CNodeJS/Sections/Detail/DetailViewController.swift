@@ -29,6 +29,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         setupFromTopic()
+        replyTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func setupFromTopic() {
@@ -98,7 +99,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         println(request.URL.description)
-        if (request.URL.description.hasPrefix("https://cnodejs.org/")) {
+        if (request.URL.description == "https://cnodejs.org/") {
             return true
         }
         

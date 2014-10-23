@@ -20,7 +20,7 @@ class ConvertTool: NSObject {
         topic.tab       = json["tab"].string
         topic.content   = json["content"].string
         topic.title     = json["title"].string
-        topic.lastTime  = json["last_reply_at"].string
+        topic.lastTime  = ConvertTool.getStringFromTime(json["last_reply_at"].stringValue)
         topic.good      = json["good"].bool
         topic.top       = json["top"].bool
         
@@ -37,8 +37,7 @@ class ConvertTool: NSObject {
             reply.id = replyJSON["id"].string
             reply.content = replyJSON["content"].string
             reply.ups = replyJSON["ups"].arrayObject as? [String]
-            reply.createAt = replyJSON["create_at"].string
-            
+            reply.createAt = ConvertTool.getStringFromTime(replyJSON["create_at"].string!)
             let replyAuthorJson = replyJSON["author"]
             var replyAuthor = Author()
             replyAuthor.loginName = replyAuthorJson["loginname"].string
@@ -49,5 +48,15 @@ class ConvertTool: NSObject {
         }
         
         return topic
+    }
+    
+    
+    class func getStringFromTime(timeString: String) -> String {
+        
+        var dateStr = timeString.substringWithRange(Range<String.Index>(start: timeString.startIndex, end: advance(timeString.startIndex, 10)))
+        var timeStr = timeString.substringWithRange(Range<String.Index>(start: advance(timeString.startIndex, 11), end: advance(timeString.startIndex, 16)))
+        
+        return dateStr + " " + timeStr
+
     }
 }
