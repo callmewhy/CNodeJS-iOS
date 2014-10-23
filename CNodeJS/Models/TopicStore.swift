@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 private let _sharedTopicStore = TopicStore()
 
@@ -54,11 +55,9 @@ class TopicStore: NSObject {
         let url = "https://cnodejs.org/api/v1/topics?page=\(nowPages[type.rawValue])&tab=\(TAB_KEYS[type.rawValue])"
         
         Alamofire.request(.GET, url)
-            .responseJSON {(_, _, JSON, _) in
-                var items = JSON as [AnyObject]
-                for item in items {
-                    var topicDic = item as [String:AnyObject]
-                    var newTopic = ConvertTool.getTopicFromDic(topicDic)
+            .responseSwiftyJSON {(_, _, json, _) in
+                for (index: String, subJson: JSON) in json {
+                    var newTopic = ConvertTool.getTopicFromJSON(subJson)
                     self.topicArray[type.rawValue].append(newTopic)
                 }
                 
@@ -73,9 +72,8 @@ class TopicStore: NSObject {
         let url = "https://cnodejs.org/api/v1/topic/\(topicId)"
         
         Alamofire.request(.GET, url)
-            .responseJSON {(_, _, JSON, _) in
-                var dic = JSON as [String:AnyObject]
-                var newTopic = ConvertTool.getTopicFromDic(dic)
+            .responseSwiftyJSON {(_, _, json, _) in
+                var newTopic = ConvertTool.getTopicFromJSON(json)
                 self.topicDictionay[newTopic.id!] = newTopic
                 finishedClosure()
         }

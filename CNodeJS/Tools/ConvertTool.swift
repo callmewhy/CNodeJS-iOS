@@ -7,72 +7,45 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ConvertTool: NSObject {
     
-    class func getTopicFromDic(topicDic: [String:AnyObject]) -> TopicModel {
+    class func getTopicFromJSON(json: JSON) -> TopicModel {
 
         var topic = TopicModel()
         
-        if let temp = topicDic["id"] as? String {
-            topic.id = temp
-        }
+        topic.id        = json["id"].string
+        topic.authorId  = json["author_id"].string
+        topic.tab       = json["tab"].string
+        topic.content   = json["content"].string
+        topic.title     = json["title"].string
+        topic.lastTime  = json["last_reply_at"].string
+        topic.good      = json["good"].bool
+        topic.top       = json["top"].bool
         
-        if let temp = topicDic["author_id"] as? String {
-            topic.authorId = temp
-        }
-        
-        if let temp = topicDic["tab"] as? String {
-            topic.tab = temp
-        }
-        
-        if let temp = topicDic["content"] as? String {
-            topic.content = temp
-        }
-        
-        if let temp = topicDic["title"] as? String {
-            topic.title = temp
-        }
-        
-        if let temp = topicDic["last_reply_at"] as? String {
-            topic.lastTime = temp
-        }
-        
-        if let temp = topicDic["good"] as? Bool {
-            topic.good = temp
-        }
-        
-        if let temp = topicDic["top"] as? Bool {
-            topic.top = temp
-        }
-        
-        if let temp = topicDic["author"] as? [String:AnyObject] {
-            var author = Author()
-            author.loginName = temp["loginname"] as String
-            author.avatarUrl = temp["avatar_url"] as String
-            topic.author = author
-        }
+        var authorJson = json["author"]
+        var author = Author()
+        author.loginName = authorJson["loginname"].string
+        author.avatarUrl = authorJson["avatar_url"].string
+        topic.author = author
         
         
-        if let temp = topicDic["replies"] as? [[String:AnyObject]] {
-            for item in temp {
-                var reply = Reply()
-                reply.id = item["id"] as? String
-                reply.content = item["content"] as? String
-                reply.ups = item["ups"] as? [String]
-                reply.createAt = item["create_at"] as? String
-                
-                
-                if let tempAuthor = item["author"] as? [String:AnyObject] {
-                    var author = Author()
-                    author.loginName = tempAuthor["loginname"] as String
-                    author.avatarUrl = tempAuthor["avatar_url"] as String
-                    reply.author = author
-                }
-
-                
-                topic.replies.append(reply)
-            }
+        let replyJson = json["replies"]
+        for (index: String, replyJSON: JSON) in replyJson {
+            var reply = Reply()
+            reply.id = replyJSON["id"].string
+            reply.content = replyJSON["content"].string
+            reply.ups = replyJSON["ups"].arrayObject as? [String]
+            reply.createAt = replyJSON["create_at"].string
+            
+            let replyAuthorJson = replyJSON["author"]
+            var replyAuthor = Author()
+            replyAuthor.loginName = replyAuthorJson["loginname"].string
+            replyAuthor.avatarUrl = replyAuthorJson["avatar_url"].string
+            reply.author = replyAuthor
+            
+            topic.replies.append(reply)
         }
         
         return topic

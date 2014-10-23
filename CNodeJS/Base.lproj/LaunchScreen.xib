@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,8 +12,12 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB2-b9-RiQ" userLabel="Background">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="X0o-ej-iwf">
-                    <rect key="frame" x="40" y="40" width="400" height="400"/>
+                    <rect key="frame" x="168" y="168" width="144" height="144"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="X0o-ej-iwf" secondAttribute="height" multiplier="1:1" id="u0D-Ze-xYq"/>
                     </constraints>
@@ -21,7 +26,11 @@
             <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="X0o-ej-iwf" secondAttribute="centerX" id="19i-JY-VPd"/>
-                <constraint firstItem="X0o-ej-iwf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="UD0-SF-z3w"/>
+                <constraint firstAttribute="trailing" secondItem="KB2-b9-RiQ" secondAttribute="trailing" id="7wE-r4-b2e"/>
+                <constraint firstItem="X0o-ej-iwf" firstAttribute="width" secondItem="KB2-b9-RiQ" secondAttribute="width" multiplier="0.3" id="M9S-8b-3lf"/>
+                <constraint firstItem="KB2-b9-RiQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PRz-11-oAQ"/>
+                <constraint firstAttribute="bottom" secondItem="KB2-b9-RiQ" secondAttribute="bottom" id="QqE-oy-rRC"/>
+                <constraint firstItem="KB2-b9-RiQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZvP-FG-rhY"/>
                 <constraint firstAttribute="centerY" secondItem="X0o-ej-iwf" secondAttribute="centerY" id="cGc-3d-KdU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

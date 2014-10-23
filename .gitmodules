@@ -7,3 +7,6 @@
 [submodule "MMMarkdown"]
 	path = MMMarkdown
 	url = https://github.com/mdiep/MMMarkdown
+[submodule "SwiftyJSON"]
+	path = SwiftyJSON
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git

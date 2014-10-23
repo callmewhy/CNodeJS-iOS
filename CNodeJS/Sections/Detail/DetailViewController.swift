@@ -97,6 +97,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
+        println(request.URL.description)
         if (request.URL.description.hasPrefix("https://cnodejs.org/")) {
             return true
         }

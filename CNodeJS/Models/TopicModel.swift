@@ -8,8 +8,8 @@
 
 
 class Author: NSObject {
-    var avatarUrl = ""
-    var loginName = ""
+    var avatarUrl: String?
+    var loginName: String?
 }
 
 
