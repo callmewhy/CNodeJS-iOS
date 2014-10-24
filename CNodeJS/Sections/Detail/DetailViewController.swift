@@ -30,6 +30,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
         
         setupFromTopic()
         replyTableView.rowHeight = UITableViewAutomaticDimension
+        replyTableViewHeight.constant = 1
     }
     
     func setupFromTopic() {
@@ -61,21 +62,20 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
     }
     
     func setupReplyTableView() {
-        replyTableViewHeight.constant = 1
         var cellConfigureClosure: CellConfigureClosure = { cell,item in
             let myCell = cell as ReplyTableViewCell
             let myItem = item as Reply
             myCell.timeLabel.text = myItem.createAt
-            myCell.contentLabel.text = myItem.content
+            myCell.contentLabel.text = MMMarkdown.HTMLStringWithMarkdown(myItem.content, error: nil)
             myCell.nameLabel.text = myItem.author?.loginName
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
         replyTableView.dataSource = replyDataSource
-        replyTableView.delegate = self
         replyTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         replyTableViewHeight.constant = replyTableViewHeight.constant + cell.frame.size.height
     }
     

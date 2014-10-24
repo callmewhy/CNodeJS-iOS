@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xrQ-zN-orW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -223,40 +222,38 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-TM-9tA">
-                                                                            <rect key="frame" x="113" y="5" width="457" height="39.5"/>
+                                                                            <rect key="frame" x="115" y="5" width="455" height="39.5"/>
                                                                             <string key="text">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</string>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTQ-S7-id9">
-                                                                            <rect key="frame" x="8" y="0.0" width="100" height="30"/>
+                                                                            <rect key="frame" x="10" y="5" width="100" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="100" id="dNq-Gj-PkB"/>
-                                                                                <constraint firstAttribute="height" constant="30" id="rAG-rJ-9sO"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-12-30 12：20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpF-eN-fHf">
-                                                                            <rect key="frame" x="8" y="30" width="100" height="19.5"/>
+                                                                            <rect key="frame" x="10" y="26" width="100" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="rpF-eN-fHf" firstAttribute="top" secondItem="HTQ-S7-id9" secondAttribute="bottom" id="Eza-ir-Mk3"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="rpF-eN-fHf" secondAttribute="bottom" id="LqB-VU-7dN"/>
-                                                                        <constraint firstItem="HTQ-S7-id9" firstAttribute="leading" secondItem="shb-lS-zCc" secondAttribute="leadingMargin" id="R92-fy-Kig"/>
+                                                                        <constraint firstItem="HTQ-S7-id9" firstAttribute="top" secondItem="zrN-TM-9tA" secondAttribute="top" id="7Qx-4h-RMM"/>
+                                                                        <constraint firstItem="rpF-eN-fHf" firstAttribute="top" secondItem="HTQ-S7-id9" secondAttribute="bottom" constant="5" id="Eza-ir-Mk3"/>
+                                                                        <constraint firstItem="HTQ-S7-id9" firstAttribute="leading" secondItem="shb-lS-zCc" secondAttribute="leading" constant="10" id="R92-fy-Kig"/>
                                                                         <constraint firstItem="zrN-TM-9tA" firstAttribute="leading" secondItem="HTQ-S7-id9" secondAttribute="trailing" constant="5" id="VBH-5q-yBY"/>
-                                                                        <constraint firstItem="HTQ-S7-id9" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="top" id="cIQ-nI-K3S"/>
+                                                                        <constraint firstItem="HTQ-S7-id9" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="top" constant="5" id="cIQ-nI-K3S"/>
                                                                         <constraint firstAttribute="bottom" secondItem="zrN-TM-9tA" secondAttribute="bottom" constant="5" id="gtz-Wm-4mZ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="zrN-TM-9tA" secondAttribute="trailing" constant="10" id="lTd-FE-8xL"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="leading" secondItem="rpF-eN-fHf" secondAttribute="leading" id="md1-4b-wie"/>
                                                                         <constraint firstItem="HTQ-S7-id9" firstAttribute="trailing" secondItem="rpF-eN-fHf" secondAttribute="trailing" id="qnU-rF-3Nn"/>
-                                                                        <constraint firstItem="zrN-TM-9tA" firstAttribute="top" secondItem="shb-lS-zCc" secondAttribute="top" constant="5" id="sRP-Gd-Gnj"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
@@ -274,6 +271,9 @@
                                                                 <integer key="value" value="50"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Cyb-9z-7Wh" id="IuN-ds-dKp"/>
+                                                        </connections>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
