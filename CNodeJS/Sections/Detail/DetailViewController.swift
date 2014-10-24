@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIWebViewDelegate {
+class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -61,6 +61,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     }
     
     func setupReplyTableView() {
+        replyTableViewHeight.constant = 1
         var cellConfigureClosure: CellConfigureClosure = { cell,item in
             let myCell = cell as ReplyTableViewCell
             let myItem = item as Reply
@@ -70,9 +71,12 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
         replyTableView.dataSource = replyDataSource
-        replyTableViewHeight.constant = CGFloat(topic!.replies.count * 50)
+        replyTableView.delegate = self
         replyTableView.reloadData()
-        replyTableView.hidden = false
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        replyTableViewHeight.constant = replyTableViewHeight.constant + cell.frame.size.height
     }
     
     override func didReceiveMemoryWarning() {
