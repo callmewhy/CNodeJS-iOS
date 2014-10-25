@@ -27,7 +27,11 @@ class ConvertTool: NSObject {
         var authorJson = json["author"]
         var author = Author()
         author.loginName = authorJson["loginname"].string
-        author.avatarUrl = authorJson["avatar_url"].string
+        
+        if let avatarUrl = authorJson["avatar_url"].string {
+            author.avatarUrl = avatarUrl.hasPrefix("//") ? "http:" + avatarUrl : avatarUrl
+        }
+        
         topic.author = author
         
         

@@ -10,3 +10,6 @@
 [submodule "SwiftyJSON"]
 	path = SwiftyJSON
 	url = https://github.com/SwiftyJSON/SwiftyJSON.git
+[submodule "HanekeSwift"]
+	path = HanekeSwift
+	url = https://github.com/Haneke/HanekeSwift.git

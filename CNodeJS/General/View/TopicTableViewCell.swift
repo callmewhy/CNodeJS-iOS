@@ -13,6 +13,7 @@ class TopicTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lastTimeLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var authorImageView: UIImageView!
     
     
     override func awakeFromNib() {

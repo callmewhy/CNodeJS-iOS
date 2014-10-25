@@ -18,8 +18,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
     @IBOutlet weak var replyTableView: UITableView!
     @IBOutlet weak var replyTableViewHeight: NSLayoutConstraint!
     
-    
-    
     var topic: TopicModel?
     
     var replyDataSource: ArrayDataSource?
@@ -30,7 +28,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
         
         setupFromTopic()
         replyTableView.rowHeight = UITableViewAutomaticDimension
-        replyTableViewHeight.constant = 1
     }
     
     func setupFromTopic() {
@@ -62,6 +59,11 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
     }
     
     func setupReplyTableView() {
+        
+        if topic!.replies.count > 0 {
+            replyTableView.hidden = false
+        }
+        
         var cellConfigureClosure: CellConfigureClosure = { cell,item in
             let myCell = cell as ReplyTableViewCell
             let myItem = item as Reply
@@ -74,7 +76,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
         replyTableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
         
         replyTableViewHeight.constant = replyTableViewHeight.constant + cell.frame.size.height
     }

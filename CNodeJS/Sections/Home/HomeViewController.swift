@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class HomeViewController: UIViewController, UITableViewDelegate {
     
@@ -74,6 +75,10 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             myCell.titleLabel.text = myItem.title
             myCell.lastTimeLabel.text = myItem.lastTime
             myCell.authorLabel.text = myItem.author?.loginName
+            if let urlStr = myItem.author?.avatarUrl {
+                println(urlStr)
+                myCell.authorImageView.hnk_setImageFromURL(NSURL(string: urlStr)!)
+            }
         }
         myDataSource = ArrayDataSource(anItems:TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex], aCellIdentifier: "topicCell", aConfigureClosure: cellConfigureClosure)
         myTableView.dataSource = myDataSource
