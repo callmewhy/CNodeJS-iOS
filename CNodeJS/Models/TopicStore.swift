@@ -56,7 +56,8 @@ class TopicStore: NSObject {
         
         Alamofire.request(.GET, url)
             .responseSwiftyJSON {(_, _, json, _) in
-                for (index: String, subJson: JSON) in json {
+                let dataJson = json["data"]
+                for (index: String, subJson: JSON) in dataJson {
                     var newTopic = ConvertTool.getTopicFromJSON(subJson)
                     self.topicArray[type.rawValue].append(newTopic)
                 }
@@ -73,7 +74,8 @@ class TopicStore: NSObject {
         
         Alamofire.request(.GET, url)
             .responseSwiftyJSON {(_, _, json, _) in
-                var newTopic = ConvertTool.getTopicFromJSON(json)
+                let dataJson = json["data"]
+                var newTopic = ConvertTool.getTopicFromJSON(dataJson)
                 self.topicDictionay[newTopic.id!] = newTopic
                 finishedClosure()
         }
