@@ -68,8 +68,10 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
             let myCell = cell as ReplyTableViewCell
             let myItem = item as Reply
             myCell.timeLabel.text = myItem.createAt
-            myCell.contentLabel.text = MMMarkdown.HTMLStringWithMarkdown(myItem.content, error: nil)
+            var HTMLData = MMMarkdown.HTMLStringWithMarkdown(myItem.content, error: nil)
+            myCell.contentLabel.text = NSAttributedString(HTML: HTMLData).string
             myCell.nameLabel.text = myItem.author?.loginName
+            
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
         replyTableView.dataSource = replyDataSource

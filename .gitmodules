@@ -13,3 +13,6 @@
 [submodule "HanekeSwift"]
 	path = HanekeSwift
 	url = https://github.com/Haneke/HanekeSwift.git
+[submodule "UICoreTextView"]
+	path = UICoreTextView
+	url = https://github.com/giladno/UICoreTextView.git
