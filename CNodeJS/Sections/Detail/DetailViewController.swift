@@ -53,8 +53,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
         
         // set content view
         if let content = topic?.content as String? {
-            let outputHtml: String = MMMarkdown.HTMLStringWithMarkdown(topic?.content, error: nil)
-            contentWebView.loadHTMLString(outputHtml, baseURL: NSURL(string: "https://cnodejs.org/"))
+            contentWebView.loadHTMLString(content, baseURL: NSURL(string: "https://cnodejs.org/"))
         }
     }
     
@@ -70,12 +69,20 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
             myCell.timeLabel.text = myItem.createAt
             var HTMLData = MMMarkdown.HTMLStringWithMarkdown(myItem.content, error: nil)
             myCell.contentLabel.text = NSAttributedString(HTML: HTMLData).string
-            myCell.nameLabel.text = myItem.author?.loginName
-            
+            myCell.nameLabel.text = myItem.author?.loginName            
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
         replyTableView.dataSource = replyDataSource
         replyTableView.reloadData()
+    }
+    
+    func loadHTML(myCell:ReplyTableViewCell,htmlString:String) {
+        myCell.contentLabel.attributedText =
+            NSAttributedString(
+                data: htmlString.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
+                options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType],
+                documentAttributes: nil,
+                error: nil)
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
