@@ -11,5 +11,6 @@
 
 #import "HMSegmentedControl.h"
 #import <MMMarkdown/MMMarkdown.h>
+#import "CoreTextView.h"
 
 #endif
