@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		95BBE08C1A09227100C386D2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BBE08B1A09227100C386D2 /* CoreText.framework */; };
 		95BBE08E1A09227A00C386D2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BBE08D1A09227A00C386D2 /* libxml2.dylib */; };
-		95BBE0911A0923A900C386D2 /* CoreTextView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 95BBE0901A0923A900C386D2 /* CoreTextView.mm */; };
 		962548A019F7B5B500F45539 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625489F19F7B5B500F45539 /* ReplyTableViewCell.swift */; };
 		9626533519F6323F0076C205 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9626533219F632350076C205 /* Alamofire.framework */; };
 		9635C16419FBEBFD00D29556 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9635C15719FBEBE900D29556 /* Haneke.framework */; };
+		9635C2121A0A3DAF00D29556 /* CoreTextView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9635C2111A0A3DAF00D29556 /* CoreTextView.mm */; };
 		9641D61C19F8A6C7001190F2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641D61719F8A6B6001190F2 /* SwiftyJSON.framework */; };
 		9641D61F19F8A78A001190F2 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641D61E19F8A78A001190F2 /* Alamofire-SwiftyJSON.swift */; };
 		96A31A3719F4D4B1004E6941 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A31A3619F4D4B1004E6941 /* HomeViewController.swift */; };
@@ -175,11 +175,11 @@
 /* Begin PBXFileReference section */
 		95BBE08B1A09227100C386D2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		95BBE08D1A09227A00C386D2 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		95BBE08F1A0923A900C386D2 /* CoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextView.h; sourceTree = "<group>"; };
-		95BBE0901A0923A900C386D2 /* CoreTextView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreTextView.mm; sourceTree = "<group>"; };
 		9625489F19F7B5B500F45539 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		9626532C19F632340076C205 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		9635C14E19FBEBE800D29556 /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = HanekeSwift/Haneke.xcodeproj; sourceTree = SOURCE_ROOT; };
+		9635C2101A0A3DAF00D29556 /* CoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextView.h; sourceTree = "<group>"; };
+		9635C2111A0A3DAF00D29556 /* CoreTextView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreTextView.mm; sourceTree = "<group>"; };
 		9641D60B19F8A6B5001190F2 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = SOURCE_ROOT; };
 		9641D61E19F8A78A001190F2 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		96A31A3619F4D4B1004E6941 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +242,15 @@
 				9635C15B19FBEBE900D29556 /* HanekeDemo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9635C20F1A0A3DAF00D29556 /* CoreTextView */ = {
+			isa = PBXGroup;
+			children = (
+				9635C2101A0A3DAF00D29556 /* CoreTextView.h */,
+				9635C2111A0A3DAF00D29556 /* CoreTextView.mm */,
+			);
+			path = CoreTextView;
 			sourceTree = "<group>";
 		};
 		9641D60C19F8A6B5001190F2 /* Products */ = {
@@ -309,10 +318,6 @@
 		96C8CCCB19F4B515000EB59E = {
 			isa = PBXGroup;
 			children = (
-				95BBE08F1A0923A900C386D2 /* CoreTextView.h */,
-				95BBE0901A0923A900C386D2 /* CoreTextView.mm */,
-				95BBE08D1A09227A00C386D2 /* libxml2.dylib */,
-				95BBE08B1A09227100C386D2 /* CoreText.framework */,
 				96C8CCD619F4B515000EB59E /* CNodeJS */,
 				96C8CCEC19F4B515000EB59E /* CNodeJSTests */,
 				96C8CCD519F4B515000EB59E /* Products */,
@@ -419,12 +424,15 @@
 		96C8CCFE19F4B5B0000EB59E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				95BBE08B1A09227100C386D2 /* CoreText.framework */,
+				95BBE08D1A09227A00C386D2 /* libxml2.dylib */,
 				9635C14E19FBEBE800D29556 /* Haneke.xcodeproj */,
 				9641D60B19F8A6B5001190F2 /* SwiftyJSON.xcodeproj */,
 				96A86A9319F6791E003B43C9 /* MMMarkdown.xcodeproj */,
 				96A86A6C19F64DB2003B43C9 /* PKHUD.xcodeproj */,
 				9626532C19F632340076C205 /* Alamofire.xcodeproj */,
 				96C8CD0019F4BB92000EB59E /* HMSegmentedControl */,
+				9635C20F1A0A3DAF00D29556 /* CoreTextView */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -656,7 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9641D61F19F8A78A001190F2 /* Alamofire-SwiftyJSON.swift in Sources */,
-				95BBE0911A0923A900C386D2 /* CoreTextView.mm in Sources */,
+				9635C2121A0A3DAF00D29556 /* CoreTextView.mm in Sources */,
 				96A468A319F7EDFE00450992 /* HUDTool.swift in Sources */,
 				96A86A8019F65FDB003B43C9 /* API.swift in Sources */,
 				96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */,

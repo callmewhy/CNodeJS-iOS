@@ -239,7 +239,7 @@ template<typename T> struct RunDelegateT : CTRunDelegateCallbacks
 						{
 							uint8_t r,g,b;
 							CGFloat a=1.0f;
-							if (sscanf((const char*)value, "#%2hhx%2hhx%2hhx",&r,&g,&b)==3 || sscanf((const char*)value, "rgb(%hhu,%hhu,%hhu)",&r,&g,&b)==3 || sscanf((const char*)value, "rgba(%hhu,%hhu,%hhu,%f)",&r,&g,&b,&a)==4)
+							if (sscanf((const char*)value, "#%2hhx%2hhx%2hhx",&r,&g,&b)==3 || sscanf((const char*)value, "rgb(%hhu,%hhu,%hhu)",&r,&g,&b)==3 || sscanf((const char*)value, "rgba(%hhu,%hhu,%hhu,%lf)",&r,&g,&b,&a)==4)
 							{
 								UIColor* color=[UIColor colorWithRed:((CGFloat)r)/255.0f green:((CGFloat)g)/255.0f blue:((CGFloat)b)/255.0f alpha:a];
 								if (xmlStrcasecmp(name,BAD_CAST"s")==0)
