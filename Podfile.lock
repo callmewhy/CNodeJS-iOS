@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (3.2.0)
+  - HanekeSwift (0.10.1)
+  - HMSegmentedControl (1.5.2)
+  - PKHUD (2.2.5)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - HanekeSwift
+  - HMSegmentedControl
+  - PKHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
+  PKHUD: 15d9db01fb008bb9247c6d785c585f587955b113
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

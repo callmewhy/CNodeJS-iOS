@@ -43,7 +43,7 @@ class TopicStore: NSObject {
         }
     }
     
-    func loadTopics(#type:TopicType, mode:LoadMode, finishedClosure:()->Void) {
+    func loadTopics(type type:TopicType, mode:LoadMode, finishedClosure:()->Void) {
         
         if(mode == .Refresh) {
             nowPages[type.rawValue] = 1
@@ -54,34 +54,31 @@ class TopicStore: NSObject {
         
         let url = "https://cnodejs.org/api/v1/topics?page=\(nowPages[type.rawValue])&tab=\(TAB_KEYS[type.rawValue])"
         
-        Alamofire.request(.GET, url)
-            .responseSwiftyJSON {(_, _, json, _) in
-                let dataJson = json["data"]
-                for (index: String, subJson: JSON) in dataJson {
-                    var newTopic = ConvertTool.getTopicFromJSON(subJson)
-                    self.topicArray[type.rawValue].append(newTopic)
-                }
-                
-                finishedClosure()
-        }
-        
+        Alamofire.request(Method.GET, url).responseSwiftyJSON(completionHandler: { (_, _, json, _) -> Void in
+            let dataJson = json["data"]
+            for (_, subJson): (String, JSON) in dataJson {
+                let newTopic = ConvertTool.getTopicFromJSON(subJson)
+                self.topicArray[type.rawValue].append(newTopic)
+            }
+            
+            finishedClosure()
+        })
     }
     
     
-    func loadTopic(#topicId: String, finishedClosure:()->Void) {
+    func loadTopic(topicId topicId: String, finishedClosure:()->Void) {
         
         let url = "https://cnodejs.org/api/v1/topic/\(topicId)"
         
-        Alamofire.request(.GET, url)
-            .responseSwiftyJSON {(_, _, json, _) in
+        Alamofire.request(Method.GET, url).responseSwiftyJSON(completionHandler: {(_, _, json, _) -> Void in
                 let dataJson = json["data"]
-                var newTopic = ConvertTool.getTopicFromJSON(dataJson)
+                let newTopic = ConvertTool.getTopicFromJSON(dataJson)
                 self.topicDictionay[newTopic.id!] = newTopic
                 finishedClosure()
-        }
+        })
     }
     
-    func getTopic(#topicId: String) -> TopicModel? {
+    func getTopic(topicId topicId: String) -> TopicModel? {
         return topicDictionay[topicId]
     }
     

@@ -63,12 +63,12 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
             replyTableView.hidden = false
         }
         
-        var cellConfigureClosure: CellConfigureClosure = { cell,item in
-            let myCell = cell as ReplyTableViewCell
-            let myItem = item as Reply
+        let cellConfigureClosure: CellConfigureClosure = { cell,item in
+            let myCell = cell as! ReplyTableViewCell
+            let myItem = item as! Reply
             myCell.timeLabel.text = myItem.createAt
-            var HTMLData = MMMarkdown.HTMLStringWithMarkdown(myItem.content, error: nil)
-            myCell.contentLabel.text = NSAttributedString(HTML: HTMLData).string
+            let HTMLData = "hello" // FIXME: MARKDOWN
+            myCell.contentLabel.text = NSAttributedString(string: HTMLData).string
             myCell.nameLabel.text = myItem.author?.loginName            
         }
         replyDataSource = ArrayDataSource(anItems:topic!.replies, aCellIdentifier: "replyCell", aConfigureClosure: cellConfigureClosure)
@@ -78,11 +78,10 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
     
     func loadHTML(myCell:ReplyTableViewCell,htmlString:String) {
         myCell.contentLabel.attributedText =
-            NSAttributedString(
+            try? NSAttributedString(
                 data: htmlString.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!,
                 options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType],
-                documentAttributes: nil,
-                error: nil)
+                documentAttributes: nil)
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
@@ -98,10 +97,8 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
 
     // MARK: - UIWebViewDelegate
     func webViewDidFinishLoad(webView: UIWebView) {
-        var frame = webView.frame
-        var fittingSize = webView.sizeThatFits(CGSizeZero)
+        let fittingSize = webView.sizeThatFits(CGSizeZero)
         contentWebViewHeight.constant = fittingSize.height
-        
         if let id = topic?.id {
             TopicStore.sharedInstance.loadTopic(topicId: id, finishedClosure: {
                 self.topic = TopicStore.sharedInstance.getTopic(topicId: id)
@@ -113,12 +110,12 @@ class DetailViewController: UIViewController, UIWebViewDelegate,UITableViewDeleg
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        println(request.URL.description)
-        if (request.URL.description == "https://cnodejs.org/") {
+        print(request.URL!.description)
+        if (request.URL!.description == "https://cnodejs.org/") {
             return true
         }
         
-        UIApplication.sharedApplication().openURL(request.URL)
+        UIApplication.sharedApplication().openURL(request.URL!)
         return false
         
     }

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 why. All rights reserved.
 //
 
+import Foundation
 
 class Author: NSObject {
     var avatarUrl: String?

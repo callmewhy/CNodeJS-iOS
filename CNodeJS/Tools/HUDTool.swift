@@ -9,20 +9,17 @@
 import PKHUD
 
 class HUDTool: NSObject {
-    
     class func showTextView(textString: String) {
-        HUDController.sharedController.contentView = HUDContentView.TextView(text: textString)
-        HUDController.sharedController.show()
+        PKHUD.sharedHUD.contentView = PKHUDTextView(text: textString)
+        PKHUD.sharedHUD.show()
     }
     
-    
     class func showProcessView() {
-        HUDController.sharedController.contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.show()
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
     }
     
     class func hideView(animated: Bool) {
-        HUDController.sharedController.hide(animated: animated)
+        PKHUD.sharedHUD.hide(animated: animated)
     }
-   
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Haneke
+import HMSegmentedControl
 
 class HomeViewController: UIViewController, UITableViewDelegate {
     
@@ -47,14 +48,15 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         segmentedControl.selectionIndicatorHeight = 2
         
         // Color
-        segmentedControl.textColor                  = SEGMENT_TEXT_COLOR
+        // FIXME: color
+//        segmentedControl.textColor                  = SEGMENT_TEXT_COLOR
         segmentedControl.selectionIndicatorColor    = MAIN_COLOR
-        segmentedControl.selectedTextColor          = MAIN_COLOR
+//        segmentedControl.selectedTextColor          = MAIN_COLOR
         segmentedControl.backgroundColor            = SEGMENT_BACKGROUND_COLOR
         
         // Closure
         segmentedControl.indexChangeBlock = { sIndex in
-            self.switchDataSource(index: sIndex);
+            self.switchDataSource(sIndex);
         }
         
         self.switchDataSource();
@@ -69,14 +71,14 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         myTableView.addSubview(refreshControl)
         
         // set data source
-        var cellConfigureClosure: CellConfigureClosure = { cell,item in
-            let myCell = cell as TopicTableViewCell
-            let myItem = item as TopicModel
+        let cellConfigureClosure: CellConfigureClosure = { cell,item in
+            let myCell = cell as! TopicTableViewCell
+            let myItem = item as! TopicModel
             myCell.titleLabel.text = myItem.title
             myCell.lastTimeLabel.text = myItem.lastTime
             myCell.authorLabel.text = myItem.author?.loginName
             if let urlStr = myItem.author?.avatarUrl {
-                println(urlStr)
+                print(urlStr)
                 myCell.authorImageView.hnk_setImageFromURL(NSURL(string: urlStr)!)
             }
         }
@@ -111,7 +113,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     // update datasource
     func updateDataSource() {
-        var myDataSource = myTableView.dataSource as ArrayDataSource
+        let myDataSource = myTableView.dataSource as! ArrayDataSource
         myDataSource.items = TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex]
         myTableView.reloadData()
     }
@@ -137,13 +139,13 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         let id = segue.identifier as String!
         switch id {
         case "goDetail" :
-            let selIndexPath = myTableView.indexPathForSelectedRow()!
+            let selIndexPath = myTableView.indexPathForSelectedRow!
             myTableView.deselectRowAtIndexPath(selIndexPath, animated: false)
-            var detailVC = segue.destinationViewController as DetailViewController
+            let detailVC = segue.destinationViewController as! DetailViewController
             var currentArray = TopicStore.sharedInstance[segmentedControl.selectedSegmentIndex]
             detailVC.topic = currentArray[selIndexPath.row] as TopicModel
         default:
-            println("default segue")
+            print("default segue")
         }
 
     }
