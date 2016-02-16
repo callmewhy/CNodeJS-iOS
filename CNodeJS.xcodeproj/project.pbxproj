@@ -24,9 +24,9 @@
 		96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8CCD919F4B515000EB59E /* AppDelegate.swift */; };
 		96C8CCDF19F4B515000EB59E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C8CCDD19F4B515000EB59E /* Main.storyboard */; };
 		A09B62DB1C72F2EF00536CB5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A09B62DA1C72F2EF00536CB5 /* Podfile */; };
-		A0C2A7851C72F74F0071B111 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2A7841C72F74F0071B111 /* Alamofire-SwiftyJSON.swift */; };
 		A0C2A7871C72FB360071B111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C2A7861C72FB360071B111 /* UIKit.framework */; };
 		A0C2A7891C72FB3C0071B111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C2A7881C72FB3C0071B111 /* Foundation.framework */; };
+		A0C2A78C1C72FD1B0071B111 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2A78B1C72FD1B0071B111 /* Alamofire-SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,9 +63,9 @@
 		96C8CCEE19F4B515000EB59E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C8CCEF19F4B515000EB59E /* CNodeJSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNodeJSTests.swift; sourceTree = "<group>"; };
 		A09B62DA1C72F2EF00536CB5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		A0C2A7841C72F74F0071B111 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		A0C2A7861C72FB360071B111 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A0C2A7881C72FB3C0071B111 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A0C2A78B1C72FD1B0071B111 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		AAF1ED674C4C519B55B0288A /* Pods-CNodeJS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS/Pods-CNodeJS.release.xcconfig"; sourceTree = "<group>"; };
 		BAED55755843B607F5BC250F /* Pods-CNodeJS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS/Pods-CNodeJS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,7 +193,7 @@
 		96C8CCF919F4B5B0000EB59E /* General */ = {
 			isa = PBXGroup;
 			children = (
-				A0C2A7831C72F7260071B111 /* Extension */,
+				A0C2A78A1C72FD1B0071B111 /* Extension */,
 				96A31A3A19F4E304004E6941 /* Class */,
 				96C8CCFA19F4B5B0000EB59E /* View */,
 			);
@@ -268,12 +268,12 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		A0C2A7831C72F7260071B111 /* Extension */ = {
+		A0C2A78A1C72FD1B0071B111 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A0C2A7841C72F74F0071B111 /* Alamofire-SwiftyJSON.swift */,
+				A0C2A78B1C72FD1B0071B111 /* Alamofire-SwiftyJSON.swift */,
 			);
-			name = Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,9 +406,9 @@
 				96A86A8019F65FDB003B43C9 /* API.swift in Sources */,
 				96A31A3C19F4E323004E6941 /* ArrayDataSource.swift in Sources */,
 				962548A019F7B5B500F45539 /* ReplyTableViewCell.swift in Sources */,
+				A0C2A78C1C72FD1B0071B111 /* Alamofire-SwiftyJSON.swift in Sources */,
 				96BCCF9B19F55C88003A7AB5 /* ConvertTool.swift in Sources */,
 				96C8CCDA19F4B515000EB59E /* AppDelegate.swift in Sources */,
-				A0C2A7851C72F74F0071B111 /* Alamofire-SwiftyJSON.swift in Sources */,
 				96A31A3919F4DA5D004E6941 /* Color.swift in Sources */,
 				96A31A3719F4D4B1004E6941 /* HomeViewController.swift in Sources */,
 				96A31A3E19F4F369004E6941 /* TopicModel.swift in Sources */,
